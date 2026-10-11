@@ -1,0 +1,354 @@
+{
+  "_note": "15 deals seeded into the fictional pipeline, at every stage. The pipeline and stage ids are invented. The amounts are illustrative.",
+  "deals": [
+    {
+      "id": "70201",
+      "properties": {
+        "dealname": "Kimberly Oduya - ants (Jacksonville)",
+        "amount": "540",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_quote_sent",
+        "ridgeway_event_id": "evt-seed-0201",
+        "createdate": "2026-09-17T11:34:00.000Z",
+        "hs_object_id": "70201"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40110",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70202",
+      "properties": {
+        "dealname": "Pamela Strand - roaches (Jacksonville)",
+        "amount": "250",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_inspection_scheduled",
+        "ridgeway_event_id": "evt-seed-0202",
+        "createdate": "2026-10-08T13:15:00.000Z",
+        "hs_object_id": "70202"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40113",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70203",
+      "properties": {
+        "dealname": "Hollis Barnett - termites (Savannah)",
+        "amount": "175",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_won",
+        "ridgeway_event_id": "evt-seed-0203",
+        "createdate": "2026-09-30T16:00:00.000Z",
+        "closedate": "2026-10-02T19:20:00.000Z",
+        "hs_object_id": "70203"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40111",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70204",
+      "properties": {
+        "dealname": "Darnell Fitch - rodents (Mobile)",
+        "amount": "450",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_lost",
+        "ridgeway_event_id": "evt-seed-0204",
+        "createdate": "2026-08-21T22:06:00.000Z",
+        "closedate": "2026-09-03T14:00:00.000Z",
+        "hs_object_id": "70204"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40112",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70205",
+      "properties": {
+        "dealname": "Toya Simmons - ants (Savannah)",
+        "amount": "200",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_contacted",
+        "ridgeway_event_id": "evt-seed-0205",
+        "createdate": "2026-10-05T12:30:00.000Z",
+        "hs_object_id": "70205"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40114",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70206",
+      "properties": {
+        "dealname": "Imani Jefferson - roaches (Savannah)",
+        "amount": "3900",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_quote_sent",
+        "ridgeway_event_id": "evt-seed-0206",
+        "createdate": "2026-10-01T14:10:00.000Z",
+        "hs_object_id": "70206"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40107",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70207",
+      "properties": {
+        "dealname": "Eun-ji Seo - termites (Jacksonville)",
+        "amount": "325",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_won",
+        "ridgeway_event_id": "evt-seed-0207",
+        "createdate": "2026-09-28T13:00:00.000Z",
+        "closedate": "2026-09-30T15:30:00.000Z",
+        "hs_object_id": "70207"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40103",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70208",
+      "properties": {
+        "dealname": "Dwayne Pettigrew - termites (Mobile)",
+        "amount": "1800",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_needs_approval",
+        "ridgeway_event_id": "evt-seed-0208",
+        "createdate": "2026-10-09T15:42:00.000Z",
+        "hs_object_id": "70208"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40109",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70209",
+      "properties": {
+        "dealname": "Gerald Washington - wildlife (Jacksonville)",
+        "amount": "650",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_needs_approval",
+        "ridgeway_event_id": "evt-seed-0209",
+        "createdate": "2026-10-10T12:05:00.000Z",
+        "hs_object_id": "70209"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40104",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70210",
+      "properties": {
+        "dealname": "Renee Castellanos - mosquitoes (Jacksonville)",
+        "amount": "600",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_new_lead",
+        "ridgeway_event_id": "evt-seed-0210",
+        "createdate": "2026-10-10T20:15:00.000Z",
+        "hs_object_id": "70210"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40101",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70211",
+      "properties": {
+        "dealname": "Tamika Rhodes - spiders (Savannah)",
+        "amount": "160",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_new_lead",
+        "ridgeway_event_id": "evt-seed-0211",
+        "createdate": "2026-10-11T00:44:00.000Z",
+        "hs_object_id": "70211"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40105",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70212",
+      "properties": {
+        "dealname": "Bao Tran - termites (Savannah)",
+        "amount": "2450",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_quote_sent",
+        "ridgeway_event_id": "evt-seed-0212",
+        "createdate": "2026-10-06T14:20:00.000Z",
+        "hs_object_id": "70212"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40106",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70213",
+      "properties": {
+        "dealname": "Lorraine Beauchamp - roaches (Mobile)",
+        "amount": "250",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_contacted",
+        "ridgeway_event_id": "evt-seed-0213",
+        "createdate": "2026-10-09T18:05:00.000Z",
+        "hs_object_id": "70213"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40108",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70214",
+      "properties": {
+        "dealname": "Terrence Boyd - rodents (Jacksonville)",
+        "amount": "450",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_lost",
+        "ridgeway_event_id": "evt-seed-0214",
+        "createdate": "2026-07-14T16:00:00.000Z",
+        "closedate": "2026-07-30T18:00:00.000Z",
+        "hs_object_id": "70214"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40102",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    },
+    {
+      "id": "70215",
+      "properties": {
+        "dealname": "Darnell Fitch - bed bugs (Mobile)",
+        "amount": "900",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_inspection_scheduled",
+        "ridgeway_event_id": "evt-seed-0215",
+        "createdate": "2026-10-09T21:30:00.000Z",
+        "hs_object_id": "70215"
+      },
+      "associations": {
+        "contacts": {
+          "results": [
+            {
+              "id": "40112",
+              "type": "deal_to_contact"
+            }
+          ]
+        }
+      },
+      "archived": false
+    }
+  ]
+}

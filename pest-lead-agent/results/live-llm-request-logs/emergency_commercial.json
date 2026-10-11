@@ -1,0 +1,373 @@
+[
+  {
+    "seq": 0,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Service area!A2:F",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 1,
+    "op": "fieldroutes.search_customers",
+    "method": "GET",
+    "path": "/fieldroutes/customer/search",
+    "query": {
+      "includeData": "1",
+      "phone": "2515550199"
+    },
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 2,
+    "op": "hubspot.search_contacts",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts/search",
+    "query": {},
+    "body": {
+      "filterGroups": [
+        {
+          "filters": [
+            {
+              "propertyName": "email",
+              "operator": "EQ",
+              "value": "manager@gulfcoastgrill.example"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "propertyName": "phone",
+              "operator": "EQ",
+              "value": "+12515550199"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "ridgeway_lead_status"
+      ],
+      "limit": 5
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 3,
+    "op": "hubspot.create_contact",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts",
+    "query": {},
+    "body": {
+      "properties": {
+        "ridgeway_lead_status": "new_lead",
+        "ridgeway_tags": "",
+        "ridgeway_lead_source": "call_tracking",
+        "ridgeway_last_inquiry": "We run a restaurant downtown and we just saw a rat run across the kitchen floor during lunch prep. The health inspector comes Thursday. We need someone out today or tomorrow.",
+        "zip": "36602",
+        "ridgeway_pest_type": "rodents",
+        "email": "manager@gulfcoastgrill.example",
+        "phone": "+12515550199",
+        "firstname": "Gulf",
+        "lastname": "Coast Grill"
+      }
+    },
+    "status": 201,
+    "fault": null,
+    "idempotency_key": "13:Create HubSpot contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 4,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Pricing!A2:D",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 5,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Settings!A2:B",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 6,
+    "op": "hubspot.create_deal",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/deals",
+    "query": {},
+    "body": {
+      "properties": {
+        "dealname": "Gulf Coast Grill - rodents (Mobile)",
+        "amount": "775",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_new_lead",
+        "ridgeway_event_id": "evt-emergency-011"
+      }
+    },
+    "status": 201,
+    "fault": null,
+    "idempotency_key": "13:Create HubSpot deal",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 7,
+    "op": "hubspot.associate_deal_contact",
+    "method": "PUT",
+    "path": "/hubspot/crm/v4/objects/deals/1001/associations/default/contacts/1000",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "13:Associate deal with contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 8,
+    "op": "fieldroutes.search_spots",
+    "method": "GET",
+    "path": "/fieldroutes/spot/search",
+    "query": {
+      "officeIDs": "[3]",
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-10-13"
+    },
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 9,
+    "op": "hubspot.update_deal",
+    "method": "PATCH",
+    "path": "/hubspot/crm/v3/objects/deals/1001",
+    "query": {},
+    "body": {
+      "properties": {
+        "dealstage": "ridgeway_needs_approval"
+      }
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "13:Move deal to Needs approval",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 10,
+    "op": "gmail.create_draft",
+    "method": "POST",
+    "path": "/gmail/gmail/v1/users/me/drafts",
+    "query": {},
+    "body": {
+      "message": {
+        "raw": "RnJvbTogUmlkZ2V3YXkgUGVzdCBDb250cm9sIDxsZWFkc0ByaWRnZXdheS1wZXN0LmV4YW1wbGU-DQpUbzogbWFuYWdlckBndWxmY29hc3RncmlsbC5leGFtcGxlDQpTdWJqZWN0OiBZb3VyIFJpZGdld2F5IFBlc3QgQ29udHJvbCByZXF1ZXN0DQpNSU1FLVZlcnNpb246IDEuMA0KQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJVVEYtOCINCg0KSGkgR3VsZiwKClRoYW5rcyBmb3IgY29udGFjdGluZyBSaWRnZXdheSBQZXN0IENvbnRyb2wgYWJvdXQgcm9kZW50cy4KClRoZXNlIHRpbWVzIGFyZSBvcGVuIGF0IHlvdXIgbG9jYWwgYnJhbmNoOgoxLiBNb24sIE9jdCAxMiwgMTA6MDAgQU0gdG8gMTI6MDAgUE0KMi4gTW9uLCBPY3QgMTIsIDM6MDAgUE0gdG8gNTowMCBQTQozLiBUdWUsIE9jdCAxMywgODowMCBBTSB0byAxMDowMCBBTQoKUmVwbHkgd2l0aCB0aGUgb25lIHlvdSBwcmVmZXIgYW5kIHdlIHdpbGwgY29uZmlybSBpdC4KCkEgc3BlY2lhbGlzdCB3aWxsIHJldmlldyB5b3VyIHJlcXVlc3QgZmlyc3QgdG8gbWFrZSBzdXJlIHdlIHNlbmQgdGhlIHJpZ2h0IHRlY2huaWNpYW4uCgpSaWRnZXdheSBQZXN0IENvbnRyb2wKKERlbW8gZHJhZnQ6IGZpY3Rpb25hbCBjb21wYW55LCBub3Qgc2VudC4p"
+      }
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "13:Create Gmail draft",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 11,
+    "op": "clickup.create_task",
+    "method": "POST",
+    "path": "/clickup/api/v2/list/901100123/task",
+    "query": {},
+    "body": {
+      "name": "Approve, then book: rodents - Gulf, ZIP 36602",
+      "description": "Lead: Gulf, ZIP 36602\nSource: call_tracking | Event: evt-emergency-011 | Received: 2026-10-12T14:00:00.000Z\nHubSpot contact (phone and email are here): https://app.hubspot.example/contacts/0000000/record/0-1/1000\nHubSpot deal: https://app.hubspot.example/contacts/0000000/record/0-3/1001 (Needs approval) | Estimated value: $775\nBranch: Mobile, AL\nPest: rodents | Urgency: emergency | Property: commercial | Interest: one_time | Confidence: 0.95\nSummary: Downtown restaurant (ZIP 36602) saw a rat run across the kitchen floor during lunch prep; health inspection Thursday, wants service today or tomorrow.\nRed flags: rodent_in_food_prep_area, health_inspection_deadline\nApproval needed because: commercial_property\nProposed slots:\n1. Mon, Oct 12, 10:00 AM to 12:00 PM\n2. Mon, Oct 12, 3:00 PM to 5:00 PM\n3. Tue, Oct 13, 8:00 AM to 10:00 AM\nEmail draft: created in Gmail, not sent\nProposed SMS (customer opted in, not sent): Hi Gulf, this is Ridgeway Pest Control about your request. We can come Mon, Oct 12, 10:00 AM to 12:00 PM or Mon, Oct 12, 3:00 PM to 5:00 PM. Reply with the time that works. Reply STOP to opt out.",
+      "priority": 1,
+      "tags": [
+        "lead",
+        "needs-approval"
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "13:Create ClickUp CSR task",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 12,
+    "op": "slack.post_message",
+    "method": "POST",
+    "path": "/slack/api/chat.postMessage",
+    "query": {},
+    "body": {
+      "channel": "#leads",
+      "text": "New emergency lead: rodents (Mobile, AL)",
+      "blocks": [
+        {
+          "type": "header",
+          "text": {
+            "type": "plain_text",
+            "text": "New emergency lead: rodents (Mobile, AL)"
+          }
+        },
+        {
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "Downtown restaurant (ZIP 36602) saw a rat run across the kitchen floor during lunch prep; health inspection Thursday, wants service today or tomorrow."
+          }
+        },
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Lead*\nGulf, ZIP 36602"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Status*\napproval_required"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Estimated value*\n$775"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Proposed slots*\n1. Mon, Oct 12, 10:00 AM to 12:00 PM\n2. Mon, Oct 12, 3:00 PM to 5:00 PM\n3. Tue, Oct 13, 8:00 AM to 10:00 AM"
+            }
+          ]
+        },
+        {
+          "type": "context",
+          "elements": [
+            {
+              "type": "mrkdwn",
+              "text": "Event evt-emergency-011 | <https://app.hubspot.example/contacts/0000000/record/0-1/1000|HubSpot contact 1000> | <https://app.hubspot.example/contacts/0000000/record/0-3/1001|deal 1001> | ClickUp 861003x"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "*Approval needed:* commercial_property"
+          }
+        },
+        {
+          "type": "actions",
+          "block_id": "approval_evt-emergency-011",
+          "elements": [
+            {
+              "type": "button",
+              "action_id": "approve_lead",
+              "style": "primary",
+              "text": {
+                "type": "plain_text",
+                "text": "Approve"
+              },
+              "value": "{\"deal_id\":\"1001\",\"event_id\":\"evt-emergency-011\"}"
+            },
+            {
+              "type": "button",
+              "action_id": "hold_lead",
+              "text": {
+                "type": "plain_text",
+                "text": "Hold"
+              },
+              "value": "{\"deal_id\":\"1001\",\"event_id\":\"evt-emergency-011\"}"
+            }
+          ]
+        }
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "13:Post Slack leads summary",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 13,
+    "op": "sheets.append",
+    "method": "POST",
+    "path": "/sheets/v4/spreadsheets/demo-sheet-id/values/Leads!A:H:append",
+    "query": {
+      "valueInputOption": "USER_ENTERED"
+    },
+    "body": {
+      "values": [
+        [
+          "evt-emergency-011",
+          "2026-10-12T14:00:00.000Z",
+          "2026-10-12T14:00:03.991Z",
+          "call_tracking",
+          "mobile",
+          "rodents",
+          "emergency",
+          "approval_required"
+        ]
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "13:Append speed-to-lead row",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "op": "anthropic.messages",
+    "status": 200,
+    "fault": null,
+    "body": null
+  }
+]

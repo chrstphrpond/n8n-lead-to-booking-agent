@@ -1,0 +1,322 @@
+{
+  "_note": "15 contacts in the fictional HubSpot portal: nine are FieldRoutes customers (same person, mostly the same email), five are earlier leads, and 40114/40115 are one person entered twice (different first-name spelling, email and phone format), the kind of duplicate a phone search on an exact value cannot see. Phones are stored the way people typed them.",
+  "contacts": [
+    {
+      "id": "40101",
+      "properties": {
+        "firstname": "Renee",
+        "lastname": "Castellanos",
+        "email": "renee.castellanos@gmail.example",
+        "phone": "(904) 555-0111",
+        "zip": "32223",
+        "address": "4408 Marlow Hollow Dr",
+        "city": "Jacksonville",
+        "state": "FL",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40101",
+        "createdate": "2023-03-14T15:01:00.000Z"
+      },
+      "createdAt": "2023-03-14T15:01:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40102",
+      "properties": {
+        "firstname": "Terrence",
+        "lastname": "Boyd",
+        "email": "tboyd77@outlook.example",
+        "phone": "+19045550169",
+        "zip": "32233",
+        "address": "912 Pelican Reach Ct",
+        "city": "Atlantic Beach",
+        "state": "FL",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40102",
+        "createdate": "2022-08-02T13:40:00.000Z"
+      },
+      "createdAt": "2022-08-02T13:40:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40103",
+      "properties": {
+        "firstname": "Eun-ji",
+        "lastname": "Seo",
+        "email": "eunji.seo@icloud.example",
+        "phone": "904-555-0149",
+        "zip": "32258",
+        "address": "2271 Tamarind Run Ln",
+        "city": "Jacksonville",
+        "state": "FL",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40103",
+        "createdate": "2021-10-28T16:12:00.000Z"
+      },
+      "createdAt": "2021-10-28T16:12:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40104",
+      "properties": {
+        "firstname": "Gerald",
+        "lastname": "Washington",
+        "email": "gerald.washington@att.example",
+        "phone": "9045550171",
+        "zip": "32246",
+        "address": "6733 Sable Palm Ct",
+        "city": "Jacksonville",
+        "state": "FL",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40104",
+        "createdate": "2018-06-07T12:00:00.000Z"
+      },
+      "createdAt": "2018-06-07T12:00:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40105",
+      "properties": {
+        "firstname": "Tamika",
+        "lastname": "Rhodes",
+        "email": "tamika.rhodes@gmail.example",
+        "phone": "+19125550173",
+        "zip": "31322",
+        "address": "214 Cypress Spur Ln",
+        "city": "Pooler",
+        "state": "GA",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "call_tracking",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40105",
+        "createdate": "2023-07-05T18:20:00.000Z"
+      },
+      "createdAt": "2023-07-05T18:20:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40106",
+      "properties": {
+        "firstname": "Bao",
+        "lastname": "Tran",
+        "email": "bao.tran@outlook.example",
+        "phone": "912-555-0172",
+        "zip": "31419",
+        "address": "5107 Lantern Marsh Rd",
+        "city": "Savannah",
+        "state": "GA",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40106",
+        "createdate": "2020-11-03T14:05:00.000Z"
+      },
+      "createdAt": "2020-11-03T14:05:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40107",
+      "properties": {
+        "firstname": "Imani",
+        "lastname": "Jefferson",
+        "email": "imani.jefferson@hartwellpg.example",
+        "phone": "+19125550129",
+        "zip": "31406",
+        "address": "3100 Cedar Wick Rd",
+        "city": "Savannah",
+        "state": "GA",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "call_tracking",
+        "ridgeway_lead_status": "customer",
+        "company": "Magnolia Row Apartments",
+        "hs_object_id": "40107",
+        "createdate": "2022-09-12T13:00:00.000Z"
+      },
+      "createdAt": "2022-09-12T13:00:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40108",
+      "properties": {
+        "firstname": "Lorraine",
+        "lastname": "Beauchamp",
+        "email": "lorraine.beauchamp@gmail.example",
+        "phone": "+12515550179",
+        "zip": "36605",
+        "address": "1217 Bayou Sorrel Ln",
+        "city": "Mobile",
+        "state": "AL",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "hubspot_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40108",
+        "createdate": "2024-03-12T20:11:00.000Z"
+      },
+      "createdAt": "2024-03-12T20:11:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40109",
+      "properties": {
+        "firstname": "Dwayne",
+        "lastname": "Pettigrew",
+        "email": "dwayne.pettigrew@outlook.example",
+        "phone": "251-555-0147",
+        "zip": "36608",
+        "address": "3321 Pecan Hollow Dr",
+        "city": "Mobile",
+        "state": "AL",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "hs_object_id": "40109",
+        "createdate": "2020-11-02T17:45:00.000Z"
+      },
+      "createdAt": "2020-11-02T17:45:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40110",
+      "properties": {
+        "firstname": "Kimberly",
+        "lastname": "Oduya",
+        "email": "kimberly.oduya@gmail.example",
+        "phone": "904.555.0193",
+        "zip": "32257",
+        "address": "1510 Wading Crane Ct",
+        "city": "Jacksonville",
+        "state": "FL",
+        "lifecyclestage": "opportunity",
+        "ridgeway_lead_source": "hubspot_form",
+        "ridgeway_lead_status": "new_lead",
+        "hs_object_id": "40110",
+        "createdate": "2026-09-17T11:30:00.000Z"
+      },
+      "createdAt": "2026-09-17T11:30:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40111",
+      "properties": {
+        "firstname": "Hollis",
+        "lastname": "Barnett",
+        "email": "hollis@coastalrealtypartners.example",
+        "phone": "+19125550198",
+        "zip": "31405",
+        "address": "",
+        "city": "Savannah",
+        "state": "GA",
+        "lifecyclestage": "customer",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "customer",
+        "company": "Coastal Realty Partners",
+        "hs_object_id": "40111",
+        "createdate": "2025-11-06T15:50:00.000Z"
+      },
+      "createdAt": "2025-11-06T15:50:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40112",
+      "properties": {
+        "firstname": "Darnell",
+        "lastname": "Fitch",
+        "email": "darnell.fitch@yahoo.example",
+        "phone": "251-555-0112",
+        "zip": "36604",
+        "address": "2208 Palmetto Brake Rd",
+        "city": "Mobile",
+        "state": "AL",
+        "lifecyclestage": "other",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "lost",
+        "hs_object_id": "40112",
+        "createdate": "2026-08-21T22:03:00.000Z"
+      },
+      "createdAt": "2026-08-21T22:03:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40113",
+      "properties": {
+        "firstname": "Pamela",
+        "lastname": "Strand",
+        "email": "pamela.strand@outlook.example",
+        "phone": "(904) 555-0184",
+        "zip": "32258",
+        "address": "4601 Rookery Bend Ln",
+        "city": "Jacksonville",
+        "state": "FL",
+        "lifecyclestage": "opportunity",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "new_lead",
+        "hs_object_id": "40113",
+        "createdate": "2026-10-08T13:12:00.000Z"
+      },
+      "createdAt": "2026-10-08T13:12:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40114",
+      "properties": {
+        "firstname": "Toya",
+        "lastname": "Simmons",
+        "email": "toya.simmons@yahoo.example",
+        "phone": "(912) 555-0190",
+        "zip": "31404",
+        "address": "1735 Hickory Wren Ln",
+        "city": "Savannah",
+        "state": "GA",
+        "lifecyclestage": "lead",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "new_lead",
+        "hs_object_id": "40114",
+        "createdate": "2026-06-02T19:24:00.000Z"
+      },
+      "createdAt": "2026-06-02T19:24:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    },
+    {
+      "id": "40115",
+      "properties": {
+        "firstname": "Latoya",
+        "lastname": "Simmons",
+        "email": "latoya.simmons@gmail.example",
+        "phone": "+19125550190",
+        "zip": "31404",
+        "address": "1735 Hickory Wren Ln",
+        "city": "Savannah",
+        "state": "GA",
+        "lifecyclestage": "lead",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_lead_status": "new_lead",
+        "hs_object_id": "40115",
+        "createdate": "2026-09-24T12:41:00.000Z"
+      },
+      "createdAt": "2026-09-24T12:41:00.000Z",
+      "updatedAt": "2026-09-29T15:04:00.000Z",
+      "archived": false
+    }
+  ]
+}

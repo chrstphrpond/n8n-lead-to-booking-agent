@@ -1,0 +1,396 @@
+[
+  {
+    "seq": 0,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Service area!A2:F",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 1,
+    "op": "fieldroutes.search_customers",
+    "method": "GET",
+    "path": "/fieldroutes/customer/search",
+    "query": {
+      "includeData": "1",
+      "phone": "2515550155"
+    },
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 2,
+    "op": "hubspot.search_contacts",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts/search",
+    "query": {},
+    "body": {
+      "filterGroups": [
+        {
+          "filters": [
+            {
+              "propertyName": "email",
+              "operator": "EQ",
+              "value": "luis.ortega@mail.example"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "propertyName": "phone",
+              "operator": "EQ",
+              "value": "+12515550155"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "ridgeway_lead_status"
+      ],
+      "limit": 5
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 3,
+    "op": "hubspot.create_contact",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts",
+    "query": {},
+    "body": {
+      "properties": {
+        "ridgeway_lead_status": "new_lead",
+        "ridgeway_tags": "",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_last_inquiry": "Roaches in the kitchen at night. Single house. I would like a one-time treatment this week.",
+        "zip": "36606",
+        "ridgeway_pest_type": "roaches",
+        "email": "luis.ortega@mail.example",
+        "phone": "+12515550155",
+        "firstname": "Luis",
+        "lastname": "Ortega"
+      }
+    },
+    "status": 201,
+    "fault": null,
+    "idempotency_key": "11:Create HubSpot contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 4,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Pricing!A2:D",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 5,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Settings!A2:B",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 6,
+    "op": "hubspot.create_deal",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/deals",
+    "query": {},
+    "body": {
+      "properties": {
+        "dealname": "Luis Ortega - roaches (Mobile)",
+        "amount": "180",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_new_lead",
+        "ridgeway_event_id": "evt-fr-down-010"
+      }
+    },
+    "status": 201,
+    "fault": null,
+    "idempotency_key": "11:Create HubSpot deal",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 7,
+    "op": "hubspot.associate_deal_contact",
+    "method": "PUT",
+    "path": "/hubspot/crm/v4/objects/deals/1001/associations/default/contacts/1000",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Associate deal with contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 8,
+    "op": "fieldroutes.search_spots",
+    "method": "GET",
+    "path": "/fieldroutes/spot/search",
+    "query": {
+      "officeIDs": "[3]",
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-10-15"
+    },
+    "body": null,
+    "status": 503,
+    "fault": "injected_503",
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 9,
+    "op": "fieldroutes.search_spots",
+    "method": "GET",
+    "path": "/fieldroutes/spot/search",
+    "query": {
+      "officeIDs": "[3]",
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-10-15"
+    },
+    "body": null,
+    "status": 503,
+    "fault": "injected_503",
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 10,
+    "op": "fieldroutes.search_spots",
+    "method": "GET",
+    "path": "/fieldroutes/spot/search",
+    "query": {
+      "officeIDs": "[3]",
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-10-15"
+    },
+    "body": null,
+    "status": 503,
+    "fault": "injected_503",
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 11,
+    "op": "clickup.create_task",
+    "method": "POST",
+    "path": "/clickup/api/v2/list/901100123/task",
+    "query": {},
+    "body": {
+      "name": "Call back to book: Luis, ZIP 36606",
+      "description": "FieldRoutes availability was unavailable, so no slots were proposed. Call back to book.\nLead: Luis, ZIP 36606\nHubSpot contact (phone and email are here): https://app.hubspot.example/contacts/0000000/record/0-1/1000\nBranch: Mobile, AL | Pest: roaches | Urgency: high\nHubSpot deal: https://app.hubspot.example/contacts/0000000/record/0-3/1001",
+      "priority": 2,
+      "tags": [
+        "callback-to-book"
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Create ClickUp callback task",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 12,
+    "op": "slack.post_message",
+    "method": "POST",
+    "path": "/slack/api/chat.postMessage",
+    "query": {},
+    "body": {
+      "channel": "#leads",
+      "text": "FieldRoutes availability search failed for Mobile, AL: no slots proposed for deal 1001. Callback task 861002x."
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Post Slack FieldRoutes warning",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 13,
+    "op": "gmail.create_draft",
+    "method": "POST",
+    "path": "/gmail/gmail/v1/users/me/drafts",
+    "query": {},
+    "body": {
+      "message": {
+        "raw": "RnJvbTogUmlkZ2V3YXkgUGVzdCBDb250cm9sIDxsZWFkc0ByaWRnZXdheS1wZXN0LmV4YW1wbGU-DQpUbzogbHVpcy5vcnRlZ2FAbWFpbC5leGFtcGxlDQpTdWJqZWN0OiBZb3VyIFJpZGdld2F5IFBlc3QgQ29udHJvbCByZXF1ZXN0DQpNSU1FLVZlcnNpb246IDEuMA0KQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PSJVVEYtOCINCg0KSGkgTHVpcywKClRoYW5rcyBmb3IgY29udGFjdGluZyBSaWRnZXdheSBQZXN0IENvbnRyb2wgYWJvdXQgcm9hY2hlcy4KCk9uZSBvZiBvdXIgdGVhbSB3aWxsIGNhbGwgeW91IHNob3J0bHkgdG8gZmluZCBhIHRpbWUgdGhhdCB3b3Jrcy4KClJpZGdld2F5IFBlc3QgQ29udHJvbAooRGVtbyBkcmFmdDogZmljdGlvbmFsIGNvbXBhbnksIG5vdCBzZW50Lik"
+      }
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Create Gmail draft",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 14,
+    "op": "clickup.create_task",
+    "method": "POST",
+    "path": "/clickup/api/v2/list/901100123/task",
+    "query": {},
+    "body": {
+      "name": "Book: roaches - Luis, ZIP 36606",
+      "description": "Lead: Luis, ZIP 36606\nSource: web_form | Event: evt-fr-down-010 | Received: 2026-10-12T14:00:00.000Z\nHubSpot contact (phone and email are here): https://app.hubspot.example/contacts/0000000/record/0-1/1000\nHubSpot deal: https://app.hubspot.example/contacts/0000000/record/0-3/1001 (New lead) | Estimated value: $180\nBranch: Mobile, AL\nPest: roaches | Urgency: high | Property: residential | Interest: one_time | Confidence: 0.92\nSummary: Homeowner in a single-family house (ZIP 36606) reports roaches in the kitchen at night and wants a one-time treatment this week.\nRed flags: none\nApproval: not required, slots auto-proposed\nProposed slots: none (call the customer to book)\nEmail draft: created in Gmail, not sent\nSMS: not proposed (no_sms_consent)",
+      "priority": 2,
+      "tags": [
+        "lead"
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Create ClickUp CSR task",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 15,
+    "op": "slack.post_message",
+    "method": "POST",
+    "path": "/slack/api/chat.postMessage",
+    "query": {},
+    "body": {
+      "channel": "#leads",
+      "text": "New high lead: roaches (Mobile, AL)",
+      "blocks": [
+        {
+          "type": "header",
+          "text": {
+            "type": "plain_text",
+            "text": "New high lead: roaches (Mobile, AL)"
+          }
+        },
+        {
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "Homeowner in a single-family house (ZIP 36606) reports roaches in the kitchen at night and wants a one-time treatment this week."
+          }
+        },
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Lead*\nLuis, ZIP 36606"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Status*\nauto_proposed"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Estimated value*\n$180"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Proposed slots*\nnone, callback task created"
+            }
+          ]
+        },
+        {
+          "type": "context",
+          "elements": [
+            {
+              "type": "mrkdwn",
+              "text": "Event evt-fr-down-010 | <https://app.hubspot.example/contacts/0000000/record/0-1/1000|HubSpot contact 1000> | <https://app.hubspot.example/contacts/0000000/record/0-3/1001|deal 1001> | ClickUp 861004x"
+            }
+          ]
+        }
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Post Slack leads summary",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 16,
+    "op": "sheets.append",
+    "method": "POST",
+    "path": "/sheets/v4/spreadsheets/demo-sheet-id/values/Leads!A:H:append",
+    "query": {
+      "valueInputOption": "USER_ENTERED"
+    },
+    "body": {
+      "values": [
+        [
+          "evt-fr-down-010",
+          "2026-10-12T14:00:00.000Z",
+          "2026-10-12T14:00:14.931Z",
+          "web_form",
+          "mobile",
+          "roaches",
+          "high",
+          "auto_proposed"
+        ]
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "11:Append speed-to-lead row",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "op": "anthropic.messages",
+    "status": 200,
+    "fault": null,
+    "body": null
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "seq": 0,
+    "at_ms": 1791695008527,
+    "op": "ledger.claim",
+    "method": "POST",
+    "path": "/ledger/v1/events/claim",
+    "query": {},
+    "body": {
+      "event_id": "evt-ants-ga-002",
+      "run_id": "7"
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "run_id": "7",
+    "raw_sha256": "f8dba89af16f9b4b57a274354d48e0ab7bec477f67bd5fdf25f84a6fbd1afef9",
+    "auth": {
+      "header_present": true
+    },
+    "outcome": "done"
+  }
+]

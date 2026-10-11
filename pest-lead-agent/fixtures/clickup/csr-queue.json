@@ -1,0 +1,308 @@
+{
+  "_note": "The fictional ClickUp list \"CSR Queue\" (id 901100123, the CLICKUP_LIST_ID of the tests). The custom fields are what a pest office would track; the demo workflow does not fill them yet (it puts the same facts in the task name, description and tags). Seeded tasks are yesterday's open work.",
+  "list": {
+    "id": "901100123",
+    "name": "CSR Queue",
+    "folder": {
+      "name": "Customer service"
+    },
+    "space": {
+      "name": "Ridgeway Office"
+    },
+    "statuses": [
+      {
+        "status": "to do",
+        "orderindex": 0,
+        "type": "open"
+      },
+      {
+        "status": "in progress",
+        "orderindex": 1,
+        "type": "custom"
+      },
+      {
+        "status": "waiting on customer",
+        "orderindex": 2,
+        "type": "custom"
+      },
+      {
+        "status": "done",
+        "orderindex": 3,
+        "type": "closed"
+      }
+    ]
+  },
+  "fields": [
+    {
+      "id": "cf-branch-7a1",
+      "name": "Branch",
+      "type": "drop_down",
+      "type_config": {
+        "options": [
+          {
+            "id": "b1",
+            "name": "Jacksonville",
+            "orderindex": 0
+          },
+          {
+            "id": "b2",
+            "name": "Savannah",
+            "orderindex": 1
+          },
+          {
+            "id": "b3",
+            "name": "Mobile",
+            "orderindex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "cf-pest-7a2",
+      "name": "Pest",
+      "type": "drop_down",
+      "type_config": {
+        "options": [
+          {
+            "id": "p1",
+            "name": "Ants",
+            "orderindex": 0
+          },
+          {
+            "id": "p2",
+            "name": "Roaches",
+            "orderindex": 1
+          },
+          {
+            "id": "p3",
+            "name": "Rodents",
+            "orderindex": 2
+          },
+          {
+            "id": "p4",
+            "name": "Termites",
+            "orderindex": 3
+          },
+          {
+            "id": "p5",
+            "name": "Mosquitoes",
+            "orderindex": 4
+          },
+          {
+            "id": "p6",
+            "name": "Bed bugs",
+            "orderindex": 5
+          },
+          {
+            "id": "p7",
+            "name": "Wildlife",
+            "orderindex": 6
+          },
+          {
+            "id": "p8",
+            "name": "Stinging insects",
+            "orderindex": 7
+          },
+          {
+            "id": "p9",
+            "name": "Spiders",
+            "orderindex": 8
+          },
+          {
+            "id": "p10",
+            "name": "Other",
+            "orderindex": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "cf-urgency-7a3",
+      "name": "Urgency",
+      "type": "drop_down",
+      "type_config": {
+        "options": [
+          {
+            "id": "u1",
+            "name": "Emergency",
+            "orderindex": 0
+          },
+          {
+            "id": "u2",
+            "name": "High",
+            "orderindex": 1
+          },
+          {
+            "id": "u3",
+            "name": "Normal",
+            "orderindex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "cf-deal-link-7a4",
+      "name": "HubSpot deal link",
+      "type": "url"
+    },
+    {
+      "id": "cf-callback-by-7a5",
+      "name": "Callback by",
+      "type": "date"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "86a4q8k1x",
+      "name": "Approve, then book: termites - Dwayne, ZIP 36608",
+      "status": "in progress",
+      "priority": 3,
+      "tags": [
+        "lead"
+      ],
+      "custom_fields": [
+        {
+          "name": "Branch",
+          "value": "Mobile"
+        },
+        {
+          "name": "Pest",
+          "value": "Termites"
+        },
+        {
+          "name": "Urgency",
+          "value": "Normal"
+        },
+        {
+          "name": "HubSpot deal link",
+          "value": "https://app.hubspot.example/contacts/0000000/record/0-3/70208"
+        },
+        {
+          "name": "Callback by",
+          "value": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "id": "86a4q8m2c",
+      "name": "Approve, then book: wildlife - Gerald, ZIP 32246",
+      "status": "to do",
+      "priority": 2,
+      "tags": [
+        "lead"
+      ],
+      "custom_fields": [
+        {
+          "name": "Branch",
+          "value": "Jacksonville"
+        },
+        {
+          "name": "Pest",
+          "value": "Wildlife"
+        },
+        {
+          "name": "Urgency",
+          "value": "High"
+        },
+        {
+          "name": "HubSpot deal link",
+          "value": "https://app.hubspot.example/contacts/0000000/record/0-3/70209"
+        },
+        {
+          "name": "Callback by",
+          "value": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "id": "86a4q9d7p",
+      "name": "Book: roaches - Pamela, ZIP 32258",
+      "status": "waiting on customer",
+      "priority": 3,
+      "tags": [
+        "lead"
+      ],
+      "custom_fields": [
+        {
+          "name": "Branch",
+          "value": "Jacksonville"
+        },
+        {
+          "name": "Pest",
+          "value": "Roaches"
+        },
+        {
+          "name": "Urgency",
+          "value": "Normal"
+        },
+        {
+          "name": "HubSpot deal link",
+          "value": "https://app.hubspot.example/contacts/0000000/record/0-3/70202"
+        },
+        {
+          "name": "Callback by",
+          "value": "2026-10-13"
+        }
+      ]
+    },
+    {
+      "id": "86a4qa3t9",
+      "name": "Call back to book: Toya, ZIP 31404",
+      "status": "to do",
+      "priority": 3,
+      "tags": [
+        "lead",
+        "callback-to-book"
+      ],
+      "custom_fields": [
+        {
+          "name": "Branch",
+          "value": "Savannah"
+        },
+        {
+          "name": "Pest",
+          "value": "Ants"
+        },
+        {
+          "name": "Urgency",
+          "value": "Normal"
+        },
+        {
+          "name": "HubSpot deal link",
+          "value": "https://app.hubspot.example/contacts/0000000/record/0-3/70205"
+        },
+        {
+          "name": "Callback by",
+          "value": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "id": "86a4qb6w2",
+      "name": "Service request: existing customer #52008 (mosquitoes)",
+      "status": "to do",
+      "priority": 3,
+      "tags": [
+        "service-request"
+      ],
+      "custom_fields": [
+        {
+          "name": "Branch",
+          "value": "Savannah"
+        },
+        {
+          "name": "Pest",
+          "value": "Mosquitoes"
+        },
+        {
+          "name": "Urgency",
+          "value": "Normal"
+        },
+        {
+          "name": "Callback by",
+          "value": "2026-10-12"
+        }
+      ]
+    }
+  ]
+}

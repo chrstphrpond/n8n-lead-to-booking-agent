@@ -1,0 +1,12 @@
+No encryption key found - Auto-generating and saving to: /var/folders/sk/mq57pzz165qghjrwg7mlf2_40000gn/T/pest-lead-n8n-pNINwi/.n8n/config
+[MoveSshKeysToDatabase1711390882123] No SSH keys in filesystem, skipping
+Added workflow:publish scope to project roles with workflow:update
+[MigrateExternalSecretsToEntityStorage1771500000000] No external secrets settings found, skipping
+[CreateCredentialDependencyTable1773000000000] Backfilled credential dependencies for 0 credentials. Inserted 0 dependencies.
+[MigrateRedactionEnforcementToFloor1784000000025] No stored redaction enforcement setting found, nothing to migrate
+[SetChatHubEnabledFromUsage1784000000038] Persisted Chat Hub enabled=false based on existing usage
+[BackfillPreScopingOAuthGrantScopes1784000000047] Rewrote 0 pre-scoping grants in oauth_refresh_tokens
+[BackfillPreScopingOAuthGrantScopes1784000000047] Rewrote 0 pre-scoping grants in oauth_authorization_codes
+[AddThreadIdToAgentCheckpoints1789717191125] Backfilled 0 checkpoint thread IDs; skipped 0 checkpoints.
+Importing 1 workflows...
+Successfully imported 1 workflow.

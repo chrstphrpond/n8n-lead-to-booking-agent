@@ -1,0 +1,18 @@
+# Run from pest-lead-agent/ (tests/verify.mjs does all of this with a temp N8N_USER_FOLDER and free ports)
+node workflow/build-workflow.mjs
+export N8N_USER_FOLDER="$(mktemp -d)"
+~/Library/pnpm/bin/n8n --version                     # must print 2.42.6
+~/Library/pnpm/bin/n8n import:workflow --input workflow/alert-on-errors.json
+~/Library/pnpm/bin/n8n import:workflow --input workflow/book-new-lead.json
+~/Library/pnpm/bin/n8n import:workflow --input workflow/handle-approval.json
+~/Library/pnpm/bin/n8n publish:workflow --id=pestLeadAlert001
+~/Library/pnpm/bin/n8n publish:workflow --id=pestLeadBook0001
+~/Library/pnpm/bin/n8n publish:workflow --id=pestLeadApprove1
+# env: n8n is started with an allowlisted environment (tests/n8n-env.mjs; start.sh does the same with env -i): PATH HOME TMPDIR LANG,
+#   N8N_* settings, *_BASE_URL -> local mock, dummy tokens, EVENT_LEDGER_*, LEAD_WEBHOOK_SECRET, RIDGEWAY_TEST_MODE=true, OPS_RULES_SHEET_ID,
+#   N8N_BLOCK_ENV_ACCESS_IN_NODE=false (lets any workflow read the whole environment: hence the allowlist), NODE_FUNCTION_ALLOW_BUILTIN=crypto
+~/Library/pnpm/bin/n8n start                        # publish only takes effect on (re)start
+# sign: sha256 HMAC of "<timestamp>.<raw body>" with LEAD_WEBHOOK_SECRET; send the timestamp (Unix seconds) in x-ridgeway-timestamp
+curl -X POST http://127.0.0.1:$N8N_PORT/webhook/ridgeway/lead -H 'x-ridgeway-signature: sha256=<hmac>' -H 'x-ridgeway-timestamp: <unix seconds>' --data-binary @payload.json
+# Approve / Hold: the same signature with SLACK_RELAY_SECRET over the relay's ids-only body, POST /webhook/ridgeway/slack-action (slack-relay/relay.mjs does this)
+node tests/verify.mjs

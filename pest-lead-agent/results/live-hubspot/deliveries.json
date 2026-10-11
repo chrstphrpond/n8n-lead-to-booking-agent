@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-13",
+  "n8n": "2.42.6",
+  "mode": "live Slack (real workspace) and live HubSpot (developer test account 247657707), other vendors mocked, recorded Claude answers",
+  "email_fallback": true,
+  "run_at": "2026-10-11T04:42:28.789Z",
+  "deliveries": [
+    {
+      "seq": 37,
+      "received_at": "2026-10-13T17:42:37-04:00",
+      "event_id": "evt-d1013-036",
+      "source": "web_form",
+      "note": "after hours, termite inspection",
+      "http_status": 200,
+      "status": "approval_required",
+      "branch": "jacksonville",
+      "pest_type": "termites",
+      "urgency": "normal",
+      "approval_required": true,
+      "slots": 3,
+      "warnings": [],
+      "hubspot": {
+        "contact_id": "567558459118",
+        "deal_id": "353654615744",
+        "deal_reused": true
+      },
+      "clickup_task_id": "86a4qd000",
+      "response_ms": 4144,
+      "redelivery": false,
+      "slack": {
+        "channel": "C0C867WL7AR",
+        "ts": "1791693748.601369",
+        "buttons": true
+      },
+      "hubspot_links": {
+        "contact": "https://app-na2.hubspot.com/contacts/247657707/record/0-1/567558459118",
+        "deal": "https://app-na2.hubspot.com/contacts/247657707/record/0-3/353654615744"
+      }
+    }
+  ]
+}

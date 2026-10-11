@@ -1,0 +1,15 @@
+{
+  "id": "error_handler_fires",
+  "description": "HubSpot is down for good: the run fails, the error workflow alerts Slack and logs to Sheets.",
+  "passed": true,
+  "notes": [],
+  "http_status": 500,
+  "calls": {
+    "sheets.get_values": 1,
+    "fieldroutes.search_customers": 1,
+    "hubspot.search_contacts": 3,
+    "slack.post_message": 1,
+    "sheets.append": 1,
+    "anthropic.messages": 1
+  }
+}

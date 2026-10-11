@@ -1,0 +1,308 @@
+{
+  "_note": "Seed for the mock FieldRoutes spot search. Offices are open Mon-Fri 8-5 and Sat 8-12 (branch local time); a spot is a two-hour arrival window on one technician's route, offered only on that technician's route days. Spots are taken by the booked list (existing customers' next visits) and by background booking: a deterministic hash of seed|technician|date|window below the fill rate marks the window as already sold. Emergency rule: the 3 PM window of every route is never pre-booked, so a same-day or next-day emergency always has a spot (the workflow does not know about the rule; it only searches today and tomorrow for emergencies).",
+  "office_hours": {
+    "weekdays": [
+      "08:00:00",
+      "17:00:00"
+    ],
+    "saturday": [
+      "08:00:00",
+      "12:00:00"
+    ],
+    "sunday": "closed"
+  },
+  "windows": {
+    "weekday": [
+      [
+        "08:00:00",
+        "10:00:00"
+      ],
+      [
+        "10:00:00",
+        "12:00:00"
+      ],
+      [
+        "13:00:00",
+        "15:00:00"
+      ],
+      [
+        "15:00:00",
+        "17:00:00"
+      ]
+    ],
+    "saturday": [
+      [
+        "08:00:00",
+        "10:00:00"
+      ],
+      [
+        "10:00:00",
+        "12:00:00"
+      ]
+    ]
+  },
+  "emergency_rule": {
+    "reserved_window_start": "15:00:00",
+    "description": "Never pre-booked; released only for emergency leads."
+  },
+  "background_booking": {
+    "seed": 20261013,
+    "fill_rate": 0.45
+  },
+  "technicians": [
+    {
+      "id": "T-JAX-01",
+      "employeeID": "2101",
+      "officeID": "1",
+      "name": "Andre Kimbrough",
+      "routeID": "R-JAX-1",
+      "route_days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "T-JAX-02",
+      "employeeID": "2102",
+      "officeID": "1",
+      "name": "Luis Salgado",
+      "routeID": "R-JAX-2",
+      "route_days": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "id": "T-JAX-03",
+      "employeeID": "2103",
+      "officeID": "1",
+      "name": "Tanya Okonkwo",
+      "routeID": "R-JAX-3",
+      "route_days": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "T-SAV-01",
+      "employeeID": "2201",
+      "officeID": "2",
+      "name": "Devon Marchetti",
+      "routeID": "R-SAV-1",
+      "route_days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "T-SAV-02",
+      "employeeID": "2202",
+      "officeID": "2",
+      "name": "Priyanka Venkataraman",
+      "routeID": "R-SAV-2",
+      "route_days": [
+        1,
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "T-MOB-01",
+      "employeeID": "2301",
+      "officeID": "3",
+      "name": "Cedric Boudreaux",
+      "routeID": "R-MOB-1",
+      "route_days": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "T-MOB-02",
+      "employeeID": "2302",
+      "officeID": "3",
+      "name": "Imelda Santos",
+      "routeID": "R-MOB-2",
+      "route_days": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "booked": [
+    {
+      "customerID": "51002",
+      "technician": "T-JAX-01",
+      "date": "2026-10-27",
+      "start": "10:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "51003",
+      "technician": "T-JAX-02",
+      "date": "2026-11-03",
+      "start": "13:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "51005",
+      "technician": "T-JAX-01",
+      "date": "2026-10-30",
+      "start": "08:00:00",
+      "service": "Termite Bond (annual renewal)"
+    },
+    {
+      "customerID": "51006",
+      "technician": "T-JAX-01",
+      "date": "2026-10-15",
+      "start": "10:00:00",
+      "service": "Monthly Mosquito + Quarterly Pest"
+    },
+    {
+      "customerID": "51009",
+      "technician": "T-JAX-02",
+      "date": "2026-10-21",
+      "start": "13:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "51011",
+      "technician": "T-JAX-02",
+      "date": "2026-10-19",
+      "start": "08:00:00",
+      "service": "Quarterly General Pest + Fire Ant Yard"
+    },
+    {
+      "customerID": "51012",
+      "technician": "T-JAX-01",
+      "date": "2026-11-09",
+      "start": "10:00:00",
+      "service": "Termite Bond (annual renewal)"
+    },
+    {
+      "customerID": "51014",
+      "technician": "T-JAX-02",
+      "date": "2026-10-22",
+      "start": "13:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "51016",
+      "technician": "T-JAX-01",
+      "date": "2026-10-16",
+      "start": "08:00:00",
+      "service": "Quarterly General Pest + Termite Bond"
+    },
+    {
+      "customerID": "52001",
+      "technician": "T-SAV-02",
+      "date": "2026-10-14",
+      "start": "10:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "52003",
+      "technician": "T-SAV-01",
+      "date": "2026-11-04",
+      "start": "13:00:00",
+      "service": "Termite Bond (annual renewal)"
+    },
+    {
+      "customerID": "52004",
+      "technician": "T-SAV-02",
+      "date": "2026-10-20",
+      "start": "08:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "52006",
+      "technician": "T-SAV-01",
+      "date": "2026-10-28",
+      "start": "10:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "52008",
+      "technician": "T-SAV-01",
+      "date": "2026-10-15",
+      "start": "13:00:00",
+      "service": "Monthly Mosquito + Quarterly Pest"
+    },
+    {
+      "customerID": "52010",
+      "technician": "T-SAV-01",
+      "date": "2026-10-16",
+      "start": "08:00:00",
+      "service": "Commercial IPM (monthly, 96 units)"
+    },
+    {
+      "customerID": "52013",
+      "technician": "T-SAV-02",
+      "date": "2026-10-23",
+      "start": "10:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "53002",
+      "technician": "T-MOB-01",
+      "date": "2026-10-21",
+      "start": "13:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "53004",
+      "technician": "T-MOB-01",
+      "date": "2026-11-02",
+      "start": "08:00:00",
+      "service": "Termite Bond (annual renewal)"
+    },
+    {
+      "customerID": "53005",
+      "technician": "T-MOB-01",
+      "date": "2026-10-13",
+      "start": "10:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "53007",
+      "technician": "T-MOB-02",
+      "date": "2026-10-22",
+      "start": "13:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "53008",
+      "technician": "T-MOB-01",
+      "date": "2026-10-19",
+      "start": "08:00:00",
+      "service": "Quarterly General Pest"
+    },
+    {
+      "customerID": "53010",
+      "technician": "T-MOB-02",
+      "date": "2026-10-14",
+      "start": "10:00:00",
+      "service": "Quarterly General Pest"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "synthetic": true,
+  "synthetic_reason": "Hand-written, not a model response. A schema-constrained model should not emit an out-of-enum value, so this fixture forces the guardrail path: pest_type is outside the allowlist.",
+  "recorded_at": "2026-10-11T00:00:00.000Z",
+  "id": "msg_synthetic_malformed_llm",
+  "type": "message",
+  "role": "assistant",
+  "model": "claude-haiku-5-5",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"pest_type\":\"gremlins\",\"urgency\":\"normal\",\"property_type\":\"residential\",\"service_interest\":\"inspection\",\"summary\":\"Customer reports unidentified bugs in the pantry.\",\"red_flags\":[],\"confidence\":0.9}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "usage": { "input_tokens": 0, "output_tokens": 0 }
+}

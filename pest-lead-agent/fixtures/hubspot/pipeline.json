@@ -1,0 +1,89 @@
+{
+  "_note": "Deals pipeline of the fictional HubSpot portal, shaped like GET /crm/v3/pipelines/deals. Pipeline and stage ids are invented. The lead workflow writes New lead and Needs approval; the approval workflow moves a deal from Needs approval to Approved or On hold.",
+  "id": "ridgeway_sales",
+  "label": "Ridgeway Sales",
+  "displayOrder": 0,
+  "stages": [
+    {
+      "id": "ridgeway_new_lead",
+      "label": "New lead",
+      "displayOrder": 0,
+      "metadata": {
+        "probability": "0.1",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_contacted",
+      "label": "Contacted",
+      "displayOrder": 1,
+      "metadata": {
+        "probability": "0.2",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_inspection_scheduled",
+      "label": "Inspection scheduled",
+      "displayOrder": 2,
+      "metadata": {
+        "probability": "0.4",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_needs_approval",
+      "label": "Needs approval",
+      "displayOrder": 3,
+      "metadata": {
+        "probability": "0.4",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_approved",
+      "label": "Approved",
+      "displayOrder": 4,
+      "metadata": {
+        "probability": "0.5",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_on_hold",
+      "label": "On hold",
+      "displayOrder": 5,
+      "metadata": {
+        "probability": "0.3",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_quote_sent",
+      "label": "Quote sent",
+      "displayOrder": 6,
+      "metadata": {
+        "probability": "0.6",
+        "isClosed": "false"
+      }
+    },
+    {
+      "id": "ridgeway_won",
+      "label": "Won",
+      "displayOrder": 7,
+      "metadata": {
+        "probability": "1",
+        "isClosed": "true"
+      }
+    },
+    {
+      "id": "ridgeway_lost",
+      "label": "Lost",
+      "displayOrder": 8,
+      "metadata": {
+        "probability": "0",
+        "isClosed": "true"
+      }
+    }
+  ]
+}

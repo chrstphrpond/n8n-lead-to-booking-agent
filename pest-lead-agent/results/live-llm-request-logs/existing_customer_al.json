@@ -1,0 +1,106 @@
+[
+  {
+    "seq": 0,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Service area!A2:F",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 1,
+    "op": "fieldroutes.search_customers",
+    "method": "GET",
+    "path": "/fieldroutes/customer/search",
+    "query": {
+      "includeData": "1",
+      "phone": "2515550123"
+    },
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 2,
+    "op": "clickup.create_task",
+    "method": "POST",
+    "path": "/clickup/api/v2/list/901100123/task",
+    "query": {},
+    "body": {
+      "name": "Service request: existing customer #48213 (roaches)",
+      "description": "Existing FieldRoutes customer #48213: Priya, ZIP 36605\nSource: hubspot_form | Event: evt-existing-al-003\nBranch: Mobile, AL\nPest: roaches | Urgency: normal\nSummary: Customer on quarterly plan reports roaches returning in the kitchen since last spring and asks for a re-treatment visit. ZIP 36605.\nHandle as a service request on the existing account (contact details are on the FieldRoutes customer). No new HubSpot deal was created.",
+      "priority": 3,
+      "tags": [
+        "service-request"
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "4:Create ClickUp service request task",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 3,
+    "op": "slack.post_message",
+    "method": "POST",
+    "path": "/slack/api/chat.postMessage",
+    "query": {},
+    "body": {
+      "channel": "#leads",
+      "text": "Existing customer #48213 (Priya, ZIP 36605) wrote in about roaches (Mobile, AL). ClickUp task 861000x; no new deal."
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "4:Post Slack service request alert",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 4,
+    "op": "sheets.append",
+    "method": "POST",
+    "path": "/sheets/v4/spreadsheets/demo-sheet-id/values/Leads!A:H:append",
+    "query": {
+      "valueInputOption": "USER_ENTERED"
+    },
+    "body": {
+      "values": [
+        [
+          "evt-existing-al-003",
+          "2026-10-12T14:00:00.000Z",
+          "2026-10-12T14:00:05.562Z",
+          "hubspot_form",
+          "mobile",
+          "roaches",
+          "normal",
+          "service_request"
+        ]
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "4:Append speed-to-lead row",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "op": "anthropic.messages",
+    "status": 200,
+    "fault": null,
+    "body": null
+  }
+]

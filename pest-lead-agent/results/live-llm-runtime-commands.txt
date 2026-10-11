@@ -1,0 +1,12 @@
+# Run from pest-lead-agent/ (tests/verify.mjs does all of this with a temp N8N_USER_FOLDER and free ports)
+node workflow/build-workflow.mjs
+export N8N_USER_FOLDER="$(mktemp -d)"
+~/Library/pnpm/bin/n8n --version                     # must print 2.42.6
+~/Library/pnpm/bin/n8n import:workflow --input workflow/alert-on-errors.json
+~/Library/pnpm/bin/n8n import:workflow --input workflow/book-new-lead.json
+~/Library/pnpm/bin/n8n publish:workflow --id=pestLeadAlert001
+~/Library/pnpm/bin/n8n publish:workflow --id=pestLeadBook0001
+# env: *_BASE_URL -> local mock, dummy tokens, LEAD_WEBHOOK_SECRET, RIDGEWAY_TEST_MODE=true, OPS_RULES_SHEET_ID, N8N_BLOCK_ENV_ACCESS_IN_NODE=false, NODE_FUNCTION_ALLOW_BUILTIN=crypto
+~/Library/pnpm/bin/n8n start                        # publish only takes effect on (re)start
+curl -X POST http://127.0.0.1:$N8N_PORT/webhook/ridgeway/lead -H 'x-ridgeway-signature: sha256=<hmac>' -d @payload.json
+node tests/verify.mjs --live-llm

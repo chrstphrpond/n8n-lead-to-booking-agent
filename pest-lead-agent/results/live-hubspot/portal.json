@@ -1,0 +1,48 @@
+{
+  "_note": "Written by scripts/hubspot-setup.mjs. Non-secret ids of the HubSpot developer test account the live-HubSpot mode writes to. No token here.",
+  "written_at": "2026-10-11T03:46:43.628Z",
+  "portal_id": "247657707",
+  "account_type": "DEVELOPER_TEST",
+  "data_hosting_location": "na2",
+  "ui_domain": "app-na2.hubspot.com",
+  "app_url": "https://app-na2.hubspot.com/contacts/247657707/record",
+  "pipeline": {
+    "id": "2615660268",
+    "label": "Ridgeway Sales"
+  },
+  "stages": {
+    "new_lead": "4421631687",
+    "contacted": "4421631688",
+    "inspection_scheduled": "4421631689",
+    "needs_approval": "4421631690",
+    "approved": "4421631691",
+    "on_hold": "4421631692",
+    "quote_sent": "4421631693",
+    "won": "4421631694",
+    "lost": "4421631695"
+  },
+  "group": "ridgeway_lead_agent",
+  "properties": {
+    "contacts": [
+      "ridgeway_lead_status",
+      "ridgeway_tags",
+      "ridgeway_lead_source",
+      "ridgeway_last_inquiry",
+      "ridgeway_pest_type"
+    ],
+    "deals": [
+      "ridgeway_event_id"
+    ]
+  },
+  "created": [
+    "group (contacts): ridgeway_lead_agent",
+    "property (contacts): ridgeway_lead_status",
+    "property (contacts): ridgeway_tags",
+    "property (contacts): ridgeway_lead_source",
+    "property (contacts): ridgeway_last_inquiry",
+    "property (contacts): ridgeway_pest_type",
+    "group (deals): ridgeway_lead_agent",
+    "property (deals): ridgeway_event_id",
+    "pipeline: Ridgeway Sales"
+  ]
+}

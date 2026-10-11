@@ -1,0 +1,406 @@
+[
+  {
+    "seq": 0,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Service area!A2:F",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 1,
+    "op": "fieldroutes.search_customers",
+    "method": "GET",
+    "path": "/fieldroutes/customer/search",
+    "query": {
+      "includeData": "1",
+      "phone": "9045550133"
+    },
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 2,
+    "op": "hubspot.search_contacts",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts/search",
+    "query": {},
+    "body": {
+      "filterGroups": [
+        {
+          "filters": [
+            {
+              "propertyName": "email",
+              "operator": "EQ",
+              "value": "grace.lin@mail.example"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "propertyName": "phone",
+              "operator": "EQ",
+              "value": "+19045550133"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "ridgeway_lead_status"
+      ],
+      "limit": 5
+    },
+    "status": 429,
+    "fault": "injected_429",
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 3,
+    "op": "hubspot.search_contacts",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts/search",
+    "query": {},
+    "body": {
+      "filterGroups": [
+        {
+          "filters": [
+            {
+              "propertyName": "email",
+              "operator": "EQ",
+              "value": "grace.lin@mail.example"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "propertyName": "phone",
+              "operator": "EQ",
+              "value": "+19045550133"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "ridgeway_lead_status"
+      ],
+      "limit": 5
+    },
+    "status": 429,
+    "fault": "injected_429",
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 4,
+    "op": "hubspot.search_contacts",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts/search",
+    "query": {},
+    "body": {
+      "filterGroups": [
+        {
+          "filters": [
+            {
+              "propertyName": "email",
+              "operator": "EQ",
+              "value": "grace.lin@mail.example"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "propertyName": "phone",
+              "operator": "EQ",
+              "value": "+19045550133"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "ridgeway_lead_status"
+      ],
+      "limit": 5
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 5,
+    "op": "hubspot.update_contact",
+    "method": "PATCH",
+    "path": "/hubspot/crm/v3/objects/contacts/5001",
+    "query": {},
+    "body": {
+      "properties": {
+        "ridgeway_lead_status": "new_lead",
+        "ridgeway_tags": "",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_last_inquiry": "Ants showed up around the dog bowls this week. Could I get a one-time treatment?",
+        "zip": "32250",
+        "ridgeway_pest_type": "ants",
+        "email": "grace.lin@mail.example",
+        "phone": "+19045550133"
+      }
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "10:Update HubSpot contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 6,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Pricing!A2:D",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 7,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Settings!A2:B",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 8,
+    "op": "hubspot.create_deal",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/deals",
+    "query": {},
+    "body": {
+      "properties": {
+        "dealname": "Grace Lin - ants (Jacksonville)",
+        "amount": "150",
+        "pipeline": "ridgeway_sales",
+        "dealstage": "ridgeway_new_lead",
+        "ridgeway_event_id": "evt-hubspot-429-009"
+      }
+    },
+    "status": 201,
+    "fault": null,
+    "idempotency_key": "10:Create HubSpot deal",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 9,
+    "op": "hubspot.associate_deal_contact",
+    "method": "PUT",
+    "path": "/hubspot/crm/v4/objects/deals/1000/associations/default/contacts/5001",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "10:Associate deal with contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 10,
+    "op": "fieldroutes.search_spots",
+    "method": "GET",
+    "path": "/fieldroutes/spot/search",
+    "query": {
+      "officeIDs": "[1]",
+      "dateStart": "2026-10-12",
+      "dateEnd": "2026-10-19"
+    },
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 11,
+    "op": "gmail.create_draft",
+    "method": "POST",
+    "path": "/gmail/gmail/v1/users/me/drafts",
+    "query": {},
+    "body": {
+      "message": {
+        "raw": "RnJvbTogUmlkZ2V3YXkgUGVzdCBDb250cm9sIDxsZWFkc0ByaWRnZXdheS1wZXN0LmV4YW1wbGU-DQpUbzogZ3JhY2UubGluQG1haWwuZXhhbXBsZQ0KU3ViamVjdDogWW91ciBSaWRnZXdheSBQZXN0IENvbnRyb2wgcmVxdWVzdA0KTUlNRS1WZXJzaW9uOiAxLjANCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbjsgY2hhcnNldD0iVVRGLTgiDQoNCkhpIEdyYWNlLAoKVGhhbmtzIGZvciBjb250YWN0aW5nIFJpZGdld2F5IFBlc3QgQ29udHJvbCBhYm91dCBhbnRzLgoKVGhlc2UgdGltZXMgYXJlIG9wZW4gYXQgeW91ciBsb2NhbCBicmFuY2g6CjEuIE1vbiwgT2N0IDEyLCAzOjAwIFBNIHRvIDU6MDAgUE0KMi4gVHVlLCBPY3QgMTMsIDg6MDAgQU0gdG8gMTA6MDAgQU0KMy4gV2VkLCBPY3QgMTQsIDEwOjAwIEFNIHRvIDEyOjAwIFBNCgpSZXBseSB3aXRoIHRoZSBvbmUgeW91IHByZWZlciBhbmQgd2Ugd2lsbCBjb25maXJtIGl0LgoKUmlkZ2V3YXkgUGVzdCBDb250cm9sCihEZW1vIGRyYWZ0OiBmaWN0aW9uYWwgY29tcGFueSwgbm90IHNlbnQuKQ"
+      }
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "10:Create Gmail draft",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 12,
+    "op": "clickup.create_task",
+    "method": "POST",
+    "path": "/clickup/api/v2/list/901100123/task",
+    "query": {},
+    "body": {
+      "name": "Book: ants - Grace, ZIP 32250",
+      "description": "Lead: Grace, ZIP 32250\nSource: web_form | Event: evt-hubspot-429-009 | Received: 2026-10-12T14:00:00.000Z\nHubSpot contact (phone and email are here): https://app.hubspot.example/contacts/0000000/record/0-1/5001\nHubSpot deal: https://app.hubspot.example/contacts/0000000/record/0-3/1000 (New lead) | Estimated value: $150\nBranch: Jacksonville, FL\nPest: ants | Urgency: normal | Property: residential | Interest: one_time | Confidence: 0.9\nSummary: Customer in ZIP 32250 reports ants around dog bowls this week and requests a one-time treatment.\nRed flags: none\nApproval: not required, slots auto-proposed\nProposed slots:\n1. Mon, Oct 12, 3:00 PM to 5:00 PM\n2. Tue, Oct 13, 8:00 AM to 10:00 AM\n3. Wed, Oct 14, 10:00 AM to 12:00 PM\nEmail draft: created in Gmail, not sent\nProposed SMS (customer opted in, not sent): Hi Grace, this is Ridgeway Pest Control about your request. We can come Mon, Oct 12, 3:00 PM to 5:00 PM or Tue, Oct 13, 8:00 AM to 10:00 AM. Reply with the time that works. Reply STOP to opt out.",
+      "priority": 3,
+      "tags": [
+        "lead"
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "10:Create ClickUp CSR task",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 13,
+    "op": "slack.post_message",
+    "method": "POST",
+    "path": "/slack/api/chat.postMessage",
+    "query": {},
+    "body": {
+      "channel": "#leads",
+      "text": "New normal lead: ants (Jacksonville, FL)",
+      "blocks": [
+        {
+          "type": "header",
+          "text": {
+            "type": "plain_text",
+            "text": "New normal lead: ants (Jacksonville, FL)"
+          }
+        },
+        {
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "Customer in ZIP 32250 reports ants around dog bowls this week and requests a one-time treatment."
+          }
+        },
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Lead*\nGrace, ZIP 32250"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Status*\nauto_proposed"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Estimated value*\n$150"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Proposed slots*\n1. Mon, Oct 12, 3:00 PM to 5:00 PM\n2. Tue, Oct 13, 8:00 AM to 10:00 AM\n3. Wed, Oct 14, 10:00 AM to 12:00 PM"
+            }
+          ]
+        },
+        {
+          "type": "context",
+          "elements": [
+            {
+              "type": "mrkdwn",
+              "text": "Event evt-hubspot-429-009 | <https://app.hubspot.example/contacts/0000000/record/0-1/5001|HubSpot contact 5001> | <https://app.hubspot.example/contacts/0000000/record/0-3/1000|deal 1000> | ClickUp 861002x"
+            }
+          ]
+        }
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "10:Post Slack leads summary",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 14,
+    "op": "sheets.append",
+    "method": "POST",
+    "path": "/sheets/v4/spreadsheets/demo-sheet-id/values/Leads!A:H:append",
+    "query": {
+      "valueInputOption": "USER_ENTERED"
+    },
+    "body": {
+      "values": [
+        [
+          "evt-hubspot-429-009",
+          "2026-10-12T14:00:00.000Z",
+          "2026-10-12T14:00:13.440Z",
+          "web_form",
+          "jacksonville",
+          "ants",
+          "normal",
+          "auto_proposed"
+        ]
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "10:Append speed-to-lead row",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "op": "anthropic.messages",
+    "status": 200,
+    "fault": null,
+    "body": null
+  }
+]

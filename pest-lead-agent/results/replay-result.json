@@ -1,0 +1,52 @@
+{
+  "id": "replay_two_deliveries",
+  "description": "The same signed event is delivered twice in a row.",
+  "passed": true,
+  "notes": [],
+  "first": {
+    "http_status": 200,
+    "status": "auto_proposed"
+  },
+  "second": {
+    "http_status": 200,
+    "body": {
+      "status": "duplicate",
+      "event_id": "evt-replay-check-012",
+      "reason": "already_processed"
+    }
+  },
+  "calls_after_first": {
+    "ledger.claim": 1,
+    "sheets.get_values": 3,
+    "anthropic.messages": 1,
+    "fieldroutes.search_customers": 1,
+    "hubspot.search_contacts": 1,
+    "hubspot.create_contact": 1,
+    "hubspot.get_deal": 1,
+    "hubspot.create_deal": 1,
+    "hubspot.associate_deal_contact": 1,
+    "fieldroutes.search_spots": 1,
+    "gmail.create_draft": 1,
+    "clickup.create_task": 1,
+    "slack.post_message": 1,
+    "sheets.append": 1,
+    "ledger.complete": 1
+  },
+  "calls_after_second": {
+    "ledger.claim": 2,
+    "sheets.get_values": 3,
+    "anthropic.messages": 1,
+    "fieldroutes.search_customers": 1,
+    "hubspot.search_contacts": 1,
+    "hubspot.create_contact": 1,
+    "hubspot.get_deal": 1,
+    "hubspot.create_deal": 1,
+    "hubspot.associate_deal_contact": 1,
+    "fieldroutes.search_spots": 1,
+    "gmail.create_draft": 1,
+    "clickup.create_task": 1,
+    "slack.post_message": 1,
+    "sheets.append": 1,
+    "ledger.complete": 1
+  }
+}

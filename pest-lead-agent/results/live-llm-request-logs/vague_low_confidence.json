@@ -1,0 +1,167 @@
+[
+  {
+    "seq": 0,
+    "op": "sheets.get_values",
+    "method": "GET",
+    "path": "/sheets/v4/spreadsheets/ridgeway-ops-rules/values/Service area!A2:F",
+    "query": {},
+    "body": null,
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 1,
+    "op": "hubspot.search_contacts",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts/search",
+    "query": {},
+    "body": {
+      "filterGroups": [
+        {
+          "filters": [
+            {
+              "propertyName": "email",
+              "operator": "EQ",
+              "value": "tom.hale@mail.example"
+            }
+          ]
+        },
+        {
+          "filters": [
+            {
+              "propertyName": "phone",
+              "operator": "EQ",
+              "value": "+19045550119"
+            }
+          ]
+        }
+      ],
+      "properties": [
+        "email",
+        "phone",
+        "firstname",
+        "lastname",
+        "ridgeway_lead_status"
+      ],
+      "limit": 5
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": null,
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 2,
+    "op": "hubspot.create_contact",
+    "method": "POST",
+    "path": "/hubspot/crm/v3/objects/contacts",
+    "query": {},
+    "body": {
+      "properties": {
+        "ridgeway_lead_status": "needs_review",
+        "ridgeway_tags": "needs-review",
+        "ridgeway_lead_source": "web_form",
+        "ridgeway_last_inquiry": "something scratching in the attic?",
+        "zip": "32217",
+        "email": "tom.hale@mail.example",
+        "phone": "+19045550119",
+        "firstname": "Tom",
+        "lastname": "Hale"
+      }
+    },
+    "status": 201,
+    "fault": null,
+    "idempotency_key": "9:Create HubSpot contact",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 3,
+    "op": "clickup.create_task",
+    "method": "POST",
+    "path": "/clickup/api/v2/list/901100123/task",
+    "query": {},
+    "body": {
+      "name": "Review lead: Tom, ZIP 32217",
+      "description": "Lead: Tom, ZIP 32217\nSource: web_form | Event: evt-vague-007\nHubSpot contact (phone, email and the original message are here): https://app.hubspot.example/contacts/0000000/record/0-1/1000\nWhy this needs a human: low_confidence: 0.4 < 0.6\nModel's best guess: other, normal, confidence 0.4\nNo deal and no appointment slot were created.",
+      "priority": 3,
+      "tags": [
+        "needs-review"
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "9:Create ClickUp review task",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 4,
+    "op": "slack.post_message",
+    "method": "POST",
+    "path": "/slack/api/chat.postMessage",
+    "query": {},
+    "body": {
+      "channel": "#leads",
+      "text": "Lead needs review (low_confidence: 0.4 < 0.6). ClickUp task 861001x, <https://app.hubspot.example/contacts/0000000/record/0-1/1000|HubSpot contact 1000>; no deal or slot.",
+      "blocks": [
+        {
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "*Needs review*\nlow_confidence: 0.4 < 0.6\nTask: 861001x"
+          }
+        }
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "9:Post Slack review alert",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "seq": 5,
+    "op": "sheets.append",
+    "method": "POST",
+    "path": "/sheets/v4/spreadsheets/demo-sheet-id/values/Leads!A:H:append",
+    "query": {
+      "valueInputOption": "USER_ENTERED"
+    },
+    "body": {
+      "values": [
+        [
+          "evt-vague-007",
+          "2026-10-12T14:00:00.000Z",
+          "2026-10-12T14:00:05.326Z",
+          "web_form",
+          "jacksonville",
+          "other",
+          "normal",
+          "needs_review"
+        ]
+      ]
+    },
+    "status": 200,
+    "fault": null,
+    "idempotency_key": "9:Append speed-to-lead row",
+    "auth": {
+      "header_present": true
+    }
+  },
+  {
+    "op": "anthropic.messages",
+    "status": 200,
+    "fault": null,
+    "body": null
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "_note": "The custom HubSpot properties the workflows write, and the property group they live in. scripts/hubspot-setup.mjs creates whatever is missing in a real portal (POST /crm/v3/properties/{objectType} and /groups); the mock serves the same definitions as an already set-up portal. Every other property the workflows write (email, phone, firstname, lastname, address, city, state, zip, dealname, amount, pipeline, dealstage) is a HubSpot default property.",
+  "group": {
+    "name": "ridgeway_lead_agent",
+    "label": "Ridgeway lead agent (demo)",
+    "displayOrder": -1
+  },
+  "properties": {
+    "contacts": [
+      { "name": "ridgeway_lead_status", "label": "Ridgeway lead status", "type": "string", "fieldType": "text", "description": "new_lead, needs_review, out_of_area (or customer on seeded records). Written by the lead workflow." },
+      { "name": "ridgeway_tags", "label": "Ridgeway tags", "type": "string", "fieldType": "text", "description": "out-of-area or needs-review. Written by the lead workflow." },
+      { "name": "ridgeway_lead_source", "label": "Ridgeway lead source", "type": "string", "fieldType": "text", "description": "web_form, hubspot_form or call_tracking." },
+      { "name": "ridgeway_last_inquiry", "label": "Ridgeway last inquiry", "type": "string", "fieldType": "textarea", "description": "The customer's own message (first 2,000 characters). Kept in the CRM so other systems only get ids." },
+      { "name": "ridgeway_pest_type", "label": "Ridgeway pest type", "type": "string", "fieldType": "text", "description": "The model's pest label, when the lead was qualified." }
+    ],
+    "deals": [
+      { "name": "ridgeway_event_id", "label": "Ridgeway event id", "type": "string", "fieldType": "text", "hasUniqueValue": true, "description": "The sender's event id. Unique, so the workflow reads the deal with ?idProperty=ridgeway_event_id and a second create conflicts instead of duplicating." }
+    ]
+  }
+}

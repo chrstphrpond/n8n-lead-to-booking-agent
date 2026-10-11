@@ -1,0 +1,21 @@
+{
+  "synthetic": true,
+  "synthetic_reason": "Hand-written, not a model response. It simulates a model that echoes the customer's phone number and email address (typed into the message) in summary and red_flags, even though the prompt tells it not to, so the redaction in guardrails.js can be proven end to end. A real model should not do this; the point is that the workflow does not rely on that.",
+  "recorded_at": "2026-10-11T00:00:00.000Z",
+  "id": "msg_synthetic_pii_echo",
+  "type": "message",
+  "role": "assistant",
+  "model": "claude-haiku-5-5",
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"pest_type\":\"ants\",\"urgency\":\"normal\",\"property_type\":\"residential\",\"service_interest\":\"one_time\",\"summary\":\"Caller can be reached at (904) 555-0188 or jo.rivera@mail.example about ants on the kitchen counter and wants a one-time treatment.\",\"red_flags\":[\"contact_jo.rivera@mail.example\",\"call_9045550188\",\"+1 904 555 0188\"],\"confidence\":0.9}"
+    }
+  ],
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  }
+}

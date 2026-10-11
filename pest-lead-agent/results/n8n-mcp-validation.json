@@ -1,0 +1,109 @@
+{
+  "tool": "validate_workflow",
+  "profile": "runtime",
+  "server": {
+    "name": "n8n-documentation-mcp",
+    "version": "2.92.1"
+  },
+  "input_schema_required": [
+    "workflow"
+  ],
+  "results": {
+    "book-new-lead.json": {
+      "valid": true,
+      "summary": {
+        "totalNodes": 80,
+        "enabledNodes": 80,
+        "triggerNodes": 1,
+        "validConnections": 104,
+        "invalidConnections": 0,
+        "expressionsValidated": 155,
+        "errorCount": 0,
+        "warningCount": 0
+      },
+      "errors": [],
+      "warnings": [],
+      "suggestions": [
+        "Consider enabling alwaysOutputData on \"Claim event\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Fetch ops settings\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Qualify lead with Claude\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Fetch service area rules\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Find FieldRoutes customer\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create ClickUp service request task\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Post Slack service request alert\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Search HubSpot contact\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Update HubSpot contact\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create HubSpot contact\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Find HubSpot contact by email\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Post Slack out-of-area note\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create ClickUp review task\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Post Slack review alert\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Fetch pricing rules\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Find HubSpot deal\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create HubSpot deal\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Find HubSpot deal after conflict\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Associate deal with contact\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Search FieldRoutes availability\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create ClickUp callback task\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Post Slack FieldRoutes warning\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Move deal to Needs approval\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create Gmail draft\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Create ClickUp CSR task\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Post Slack leads summary\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Append speed-to-lead row\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Mark event done\" to capture error responses for debugging",
+        "Most nodes lack error handling. Use \"onError\" property for modern error handling: \"continueRegularOutput\" (continue on error), \"continueErrorOutput\" (use error output), or \"stopWorkflow\" (stop execution).",
+        "Consider breaking this workflow into smaller sub-workflows for better maintainability",
+        "Consider using a Code node for complex data transformations instead of multiple expressions"
+      ]
+    },
+    "alert-on-errors.json": {
+      "valid": true,
+      "summary": {
+        "totalNodes": 6,
+        "enabledNodes": 6,
+        "triggerNodes": 1,
+        "validConnections": 7,
+        "invalidConnections": 0,
+        "expressionsValidated": 16,
+        "errorCount": 0,
+        "warningCount": 0
+      },
+      "errors": [],
+      "warnings": [],
+      "suggestions": [
+        "Consider enabling alwaysOutputData on \"Release failed event\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Post Slack automation alert\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Append error log row\" to capture error responses for debugging",
+        "Consider using a Code node for complex data transformations instead of multiple expressions"
+      ]
+    },
+    "handle-approval.json": {
+      "valid": true,
+      "summary": {
+        "totalNodes": 28,
+        "enabledNodes": 28,
+        "triggerNodes": 1,
+        "validConnections": 30,
+        "invalidConnections": 0,
+        "expressionsValidated": 47,
+        "errorCount": 0,
+        "warningCount": 0
+      },
+      "errors": [],
+      "warnings": [],
+      "suggestions": [
+        "Consider enabling alwaysOutputData on \"Post Slack approver notice\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Claim decision\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Fetch ops settings\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Move deal to decided stage\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Add ClickUp decision comment\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Update Slack approval message\" to capture error responses for debugging",
+        "Consider enabling alwaysOutputData on \"Mark decision done\" to capture error responses for debugging",
+        "Most nodes lack error handling. Use \"onError\" property for modern error handling: \"continueRegularOutput\" (continue on error), \"continueErrorOutput\" (use error output), or \"stopWorkflow\" (stop execution).",
+        "Consider breaking this workflow into smaller sub-workflows for better maintainability",
+        "Consider using a Code node for complex data transformations instead of multiple expressions"
+      ]
+    }
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "_note": "Contents of the fictional 'Ridgeway ops rules' Google Sheet, served by the mock at /sheets/v4/spreadsheets/ridgeway-ops-rules/values/<tab>!A2:... In a real deployment these rows live in the client's own spreadsheet and the workflow only reads them. The ZIP codes are real; the prices are illustrative placeholders (basis: 'illustrative — pending sourced research'), not Ridgeway's and not researched. The workflow reads Service area, Pricing and Settings (Settings also holds the ClickUp CSR Queue's custom field and option ids, the callback deadline per urgency and the words that mark a termite-letter request); 'Price list' is the reference the Pricing tab was derived from. The wdo_letter Pricing row (a WDO / termite letter for a real estate closing, $125 for every service interest) is as illustrative as the others; it sits inside the Price list's 'Termite WDO letter' range ($75 to $150).",
+  "spreadsheet_id": "ridgeway-ops-rules",
+  "title": "Ridgeway ops rules",
+  "tabs": {
+    "Service area": {
+      "header": [
+        "branch_id",
+        "name",
+        "state",
+        "timezone",
+        "fieldroutes_office_id",
+        "zips"
+      ],
+      "rows": [
+        [
+          "jacksonville",
+          "Jacksonville",
+          "FL",
+          "America/New_York",
+          "1",
+          "32207 32210 32216 32223 32224 32225 32233 32246 32256 32257 32258 32259 32065 32073 32003"
+        ],
+        [
+          "savannah",
+          "Savannah",
+          "GA",
+          "America/New_York",
+          "2",
+          "31401 31404 31405 31406 31410 31411 31419 31322 31324 31326 31328"
+        ],
+        [
+          "mobile",
+          "Mobile",
+          "AL",
+          "America/Chicago",
+          "3",
+          "36602 36604 36605 36606 36608 36609 36618 36619 36695 36526 36532"
+        ]
+      ]
+    },
+    "Pricing": {
+      "header": [
+        "pest_type",
+        "inspection",
+        "one_time",
+        "recurring"
+      ],
+      "rows": [
+        [
+          "termites",
+          "1200",
+          "1500",
+          "1800"
+        ],
+        [
+          "ants",
+          "125",
+          "200",
+          "540"
+        ],
+        [
+          "roaches",
+          "150",
+          "250",
+          "590"
+        ],
+        [
+          "rodents",
+          "250",
+          "450",
+          "700"
+        ],
+        [
+          "mosquitoes",
+          "75",
+          "110",
+          "600"
+        ],
+        [
+          "bed_bugs",
+          "350",
+          "900",
+          "1100"
+        ],
+        [
+          "wildlife",
+          "175",
+          "650",
+          "650"
+        ],
+        [
+          "stinging_insects",
+          "95",
+          "175",
+          "320"
+        ],
+        [
+          "spiders",
+          "110",
+          "160",
+          "420"
+        ],
+        [
+          "other",
+          "100",
+          "150",
+          "360"
+        ],
+        [
+          "wdo_letter",
+          "125",
+          "125",
+          "125"
+        ]
+      ],
+      "basis": "illustrative — pending sourced research"
+    },
+    "Settings": {
+      "header": [
+        "key",
+        "value"
+      ],
+      "rows": [
+        [
+          "commercial_multiplier",
+          "2"
+        ],
+        [
+          "emergency_surcharge",
+          "75"
+        ],
+        [
+          "approval_value_threshold",
+          "800"
+        ],
+        [
+          "approval_pest_types",
+          "termites,wildlife"
+        ],
+        [
+          "confidence_threshold",
+          "0.6"
+        ],
+        [
+          "urgency_window_days_emergency",
+          "1"
+        ],
+        [
+          "urgency_window_days_high",
+          "3"
+        ],
+        [
+          "urgency_window_days_normal",
+          "7"
+        ],
+        [
+          "commercial_requires_approval",
+          "true"
+        ],
+        [
+          "wdo_keywords",
+          "wdo,wood destroying,termite letter,termite clearance"
+        ],
+        [
+          "callback_hours_emergency",
+          "1"
+        ],
+        [
+          "callback_hours_high",
+          "4"
+        ],
+        [
+          "callback_hours_normal",
+          "24"
+        ],
+        [
+          "clickup_field_branch",
+          "cf-branch-7a1"
+        ],
+        [
+          "clickup_field_pest",
+          "cf-pest-7a2"
+        ],
+        [
+          "clickup_field_urgency",
+          "cf-urgency-7a3"
+        ],
+        [
+          "clickup_field_deal_link",
+          "cf-deal-link-7a4"
+        ],
+        [
+          "clickup_field_callback_by",
+          "cf-callback-by-7a5"
+        ],
+        [
+          "clickup_options_branch",
+          "jacksonville=b1,savannah=b2,mobile=b3"
+        ],
+        [
+          "clickup_options_pest",
+          "ants=p1,roaches=p2,rodents=p3,termites=p4,mosquitoes=p5,bed_bugs=p6,wildlife=p7,stinging_insects=p8,spiders=p9,other=p10"
+        ],
+        [
+          "clickup_options_urgency",
+          "emergency=u1,high=u2,normal=u3"
+        ],
+        [
+          "hubspot_pipeline_id",
+          "ridgeway_sales"
+        ],
+        [
+          "hubspot_stage_new_lead",
+          "ridgeway_new_lead"
+        ],
+        [
+          "hubspot_stage_needs_approval",
+          "ridgeway_needs_approval"
+        ],
+        [
+          "hubspot_stage_approved",
+          "ridgeway_approved"
+        ],
+        [
+          "hubspot_stage_on_hold",
+          "ridgeway_on_hold"
+        ],
+        [
+          "hubspot_app_url",
+          "https://app.hubspot.example/contacts/0000000/record"
+        ],
+        [
+          "hubspot_email_fallback",
+          "off"
+        ]
+      ]
+    },
+    "Price list": {
+      "header": [
+        "service",
+        "property",
+        "unit",
+        "low",
+        "high",
+        "basis"
+      ],
+      "basis": "illustrative — pending sourced research",
+      "rows": [
+        [
+          "General pest, initial service",
+          "residential",
+          "per service",
+          125,
+          225,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "General pest, quarterly",
+          "residential",
+          "per quarter",
+          95,
+          135,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Ants (non-fire), interior + perimeter treatment",
+          "residential",
+          "per treatment",
+          150,
+          300,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Fire ants, yard broadcast + mound treatment",
+          "residential",
+          "per treatment",
+          85,
+          185,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Roaches, initial treatment + follow-up",
+          "residential",
+          "per service",
+          175,
+          450,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Termite inspection",
+          "residential",
+          "per inspection",
+          0,
+          150,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Termite WDO letter for a real estate closing",
+          "residential",
+          "per report",
+          75,
+          150,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Termite liquid treatment",
+          "residential",
+          "per structure",
+          1200,
+          2400,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Termite bait stations, install + first year",
+          "residential",
+          "per structure",
+          1500,
+          3000,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Termite bond renewal",
+          "residential",
+          "per year",
+          225,
+          450,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Rodent trapping (three visits)",
+          "residential",
+          "per job",
+          250,
+          450,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Rodent exclusion (sealing entry points)",
+          "residential",
+          "per job",
+          450,
+          1800,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Mosquito barrier spray",
+          "residential",
+          "per monthly visit",
+          60,
+          110,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Bed bugs, chemical (two visits)",
+          "residential",
+          "per home",
+          600,
+          1200,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Bed bugs, heat treatment",
+          "residential",
+          "per home",
+          1000,
+          2800,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Wildlife, trap + exclusion (squirrels, raccoons)",
+          "residential",
+          "per job",
+          450,
+          1400,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Stinging insects, nest removal",
+          "residential",
+          "per nest",
+          125,
+          250,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "General pest, small office or retail",
+          "commercial",
+          "per month",
+          85,
+          200,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Restaurant IPM program",
+          "commercial",
+          "per month",
+          145,
+          350,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Rodent program, commercial",
+          "commercial",
+          "per month",
+          120,
+          300,
+          "illustrative — pending sourced research"
+        ],
+        [
+          "Commercial initial clean-out",
+          "commercial",
+          "per service",
+          250,
+          600,
+          "illustrative — pending sourced research"
+        ]
+      ]
+    }
+  }
+}

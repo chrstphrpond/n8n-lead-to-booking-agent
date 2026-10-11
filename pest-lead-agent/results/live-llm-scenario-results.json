@@ -1,0 +1,755 @@
+{
+  "mode": "live-llm (Claude Code bridge)",
+  "run_at": "2026-10-10T21:27:30.865Z",
+  "test_now": "2026-10-12T14:00:00Z",
+  "n8n": "2.42.6",
+  "outcomes": [
+    {
+      "id": "termite_fl_new",
+      "description": "New residential termite lead in a Jacksonville ZIP, no SMS consent.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "approval_required",
+        "event_id": "evt-termite-fl-001",
+        "branch": "jacksonville",
+        "pest_type": "termites",
+        "urgency": "normal",
+        "slots": [
+          {
+            "spot_id": "1-2026-10-12-3",
+            "date": "2026-10-12",
+            "start": "15:00:00",
+            "end": "17:00:00",
+            "label": "Mon, Oct 12, 3:00 PM to 5:00 PM"
+          },
+          {
+            "spot_id": "1-2026-10-13-0",
+            "date": "2026-10-13",
+            "start": "08:00:00",
+            "end": "10:00:00",
+            "label": "Tue, Oct 13, 8:00 AM to 10:00 AM"
+          },
+          {
+            "spot_id": "1-2026-10-14-1",
+            "date": "2026-10-14",
+            "start": "10:00:00",
+            "end": "12:00:00",
+            "label": "Wed, Oct 14, 10:00 AM to 12:00 PM"
+          }
+        ],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": "1001"
+        },
+        "clickup_task_id": "861003x",
+        "approval_required": true,
+        "outreach": {
+          "email": {
+            "to": "dana.whitfield@mail.example",
+            "subject": "Your Ridgeway Pest Control request",
+            "draft_id": "r1002",
+            "omitted_reason": null
+          },
+          "sms": {
+            "proposed": false,
+            "text": null,
+            "omitted_reason": "no_sms_consent"
+          }
+        },
+        "reason": null,
+        "qualification": {
+          "pest_type": "termites",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "inspection",
+          "summary": "Homeowner (ZIP 32207) reports pencil-width mud tubes on the garage wall and discarded wings by the back window after rain, suspects termites, and requests an inspection.",
+          "red_flags": [
+            "structural_damage_possible"
+          ],
+          "confidence": 0.9
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "hubspot.update_deal": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 5636
+    },
+    {
+      "id": "ants_ga_recurring",
+      "description": "Ant problem and a quarterly plan, Savannah, SMS consent given.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "auto_proposed",
+        "event_id": "evt-ants-ga-002",
+        "branch": "savannah",
+        "pest_type": "ants",
+        "urgency": "normal",
+        "slots": [
+          {
+            "spot_id": "2-2026-10-12-3",
+            "date": "2026-10-12",
+            "start": "15:00:00",
+            "end": "17:00:00",
+            "label": "Mon, Oct 12, 3:00 PM to 5:00 PM"
+          },
+          {
+            "spot_id": "2-2026-10-13-0",
+            "date": "2026-10-13",
+            "start": "08:00:00",
+            "end": "10:00:00",
+            "label": "Tue, Oct 13, 8:00 AM to 10:00 AM"
+          },
+          {
+            "spot_id": "2-2026-10-14-1",
+            "date": "2026-10-14",
+            "start": "10:00:00",
+            "end": "12:00:00",
+            "label": "Wed, Oct 14, 10:00 AM to 12:00 PM"
+          }
+        ],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": "1001"
+        },
+        "clickup_task_id": "861003x",
+        "approval_required": false,
+        "outreach": {
+          "email": {
+            "to": "marcus.bell@mail.example",
+            "subject": "Your Ridgeway Pest Control request",
+            "draft_id": "r1002",
+            "omitted_reason": null
+          },
+          "sms": {
+            "proposed": true,
+            "text": "Hi Marcus, this is Ridgeway Pest Control about your request. We can come Mon, Oct 12, 3:00 PM to 5:00 PM or Tue, Oct 13, 8:00 AM to 10:00 AM. Reply with the time that works. Reply STOP to opt out.",
+            "omitted_reason": null
+          }
+        },
+        "reason": null,
+        "qualification": {
+          "pest_type": "ants",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "recurring",
+          "summary": "Homeowner in ZIP 31405 has small black ants entering through the kitchen window each spring and wants to sign up for a quarterly plan; not urgent, prefers text contact.",
+          "red_flags": [],
+          "confidence": 0.9
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 3938
+    },
+    {
+      "id": "existing_customer_al",
+      "description": "Phone matches an active FieldRoutes customer in Mobile: service request, no new deal.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "service_request",
+        "event_id": "evt-existing-al-003",
+        "branch": "mobile",
+        "pest_type": "roaches",
+        "urgency": "normal",
+        "slots": [],
+        "hubspot": {
+          "contact_id": null,
+          "deal_id": null
+        },
+        "clickup_task_id": "861000x",
+        "approval_required": false,
+        "outreach": null,
+        "reason": null,
+        "qualification": {
+          "pest_type": "roaches",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "one_time",
+          "summary": "Customer on quarterly plan reports roaches returning in the kitchen since last spring and asks for a re-treatment visit. ZIP 36605.",
+          "red_flags": [
+            "property_type_unclear",
+            "existing_customer_recurring_failure"
+          ],
+          "confidence": 0.7
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 1,
+        "fieldroutes.search_customers": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 6025
+    },
+    {
+      "id": "duplicate_delivery",
+      "description": "The webhook delivers the ants_ga_recurring event a second time.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "duplicate",
+        "event_id": "evt-ants-ga-002",
+        "reason": "already_processed"
+      },
+      "calls": {},
+      "elapsed_ms": 472
+    },
+    {
+      "id": "out_of_area",
+      "description": "ZIP outside all three branches (Miami Beach).",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "out_of_area",
+        "event_id": "evt-out-of-area-004",
+        "branch": null,
+        "pest_type": "ants",
+        "urgency": "normal",
+        "slots": [],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": null
+        },
+        "clickup_task_id": null,
+        "approval_required": false,
+        "outreach": null,
+        "reason": null,
+        "qualification": {
+          "pest_type": "ants",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "one_time",
+          "summary": "Condo owner in Miami Beach (ZIP 33139) sees ants marching across the balcony and asks whether Ridgeway services the area.",
+          "red_flags": [
+            "ant_species_unknown",
+            "service_area_question"
+          ],
+          "confidence": 0.8
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 5980
+    },
+    {
+      "id": "bad_signature",
+      "description": "Valid body, wrong HMAC.",
+      "passed": true,
+      "notes": [],
+      "http_status": 401,
+      "response": {
+        "status": "unauthorized",
+        "error": "signature_mismatch"
+      },
+      "calls": {},
+      "elapsed_ms": 468
+    },
+    {
+      "id": "invalid_payload",
+      "description": "Correctly signed but with neither phone nor email.",
+      "passed": true,
+      "notes": [],
+      "http_status": 400,
+      "response": {
+        "status": "invalid",
+        "errors": [
+          "a valid phone number or email address is required"
+        ]
+      },
+      "calls": {},
+      "elapsed_ms": 462
+    },
+    {
+      "id": "vague_low_confidence",
+      "description": "A message too vague to classify. Real Claude (recorded) returned confidence 0.4, below the 0.6 threshold, so the expected outcome is needs_review.",
+      "passed": true,
+      "notes": [
+        "LLM-dependent scenario: observed status needs_review"
+      ],
+      "http_status": 200,
+      "response": {
+        "status": "needs_review",
+        "event_id": "evt-vague-007",
+        "branch": "jacksonville",
+        "pest_type": "other",
+        "urgency": "normal",
+        "slots": [],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": null
+        },
+        "clickup_task_id": "861001x",
+        "approval_required": false,
+        "outreach": null,
+        "reason": "low_confidence: 0.4 < 0.6",
+        "qualification": {
+          "pest_type": "other",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "inspection",
+          "summary": "Customer hears scratching in the attic and is unsure what animal it is; likely rodent or wildlife. ZIP 32217 (Jacksonville, FL). Needs an inspection to identify it.",
+          "red_flags": [
+            "pest_unclear"
+          ],
+          "confidence": 0.4
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 5801
+    },
+    {
+      "id": "malformed_llm",
+      "description": "Hand-written (synthetic) model output with an out-of-enum pest_type.",
+      "passed": true,
+      "notes": [],
+      "skipped": "hand-written fault injection (needs a synthetic model reply); covered in replay mode only"
+    },
+    {
+      "id": "hubspot_429",
+      "description": "HubSpot contact search is rate limited twice before succeeding; an existing contact is updated.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "auto_proposed",
+        "event_id": "evt-hubspot-429-009",
+        "branch": "jacksonville",
+        "pest_type": "ants",
+        "urgency": "normal",
+        "slots": [
+          {
+            "spot_id": "1-2026-10-12-3",
+            "date": "2026-10-12",
+            "start": "15:00:00",
+            "end": "17:00:00",
+            "label": "Mon, Oct 12, 3:00 PM to 5:00 PM"
+          },
+          {
+            "spot_id": "1-2026-10-13-0",
+            "date": "2026-10-13",
+            "start": "08:00:00",
+            "end": "10:00:00",
+            "label": "Tue, Oct 13, 8:00 AM to 10:00 AM"
+          },
+          {
+            "spot_id": "1-2026-10-14-1",
+            "date": "2026-10-14",
+            "start": "10:00:00",
+            "end": "12:00:00",
+            "label": "Wed, Oct 14, 10:00 AM to 12:00 PM"
+          }
+        ],
+        "hubspot": {
+          "contact_id": "5001",
+          "deal_id": "1000"
+        },
+        "clickup_task_id": "861002x",
+        "approval_required": false,
+        "outreach": {
+          "email": {
+            "to": "grace.lin@mail.example",
+            "subject": "Your Ridgeway Pest Control request",
+            "draft_id": "r1001",
+            "omitted_reason": null
+          },
+          "sms": {
+            "proposed": true,
+            "text": "Hi Grace, this is Ridgeway Pest Control about your request. We can come Mon, Oct 12, 3:00 PM to 5:00 PM or Tue, Oct 13, 8:00 AM to 10:00 AM. Reply with the time that works. Reply STOP to opt out.",
+            "omitted_reason": null
+          }
+        },
+        "reason": null,
+        "qualification": {
+          "pest_type": "ants",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "one_time",
+          "summary": "Customer in ZIP 32250 reports ants around dog bowls this week and requests a one-time treatment.",
+          "red_flags": [],
+          "confidence": 0.9
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 3,
+        "hubspot.update_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 13903
+    },
+    {
+      "id": "fieldroutes_down",
+      "description": "FieldRoutes spot search returns 503 on every attempt.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "auto_proposed",
+        "event_id": "evt-fr-down-010",
+        "branch": "mobile",
+        "pest_type": "roaches",
+        "urgency": "high",
+        "slots": [],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": "1001"
+        },
+        "clickup_task_id": "861004x",
+        "approval_required": false,
+        "outreach": {
+          "email": {
+            "to": "luis.ortega@mail.example",
+            "subject": "Your Ridgeway Pest Control request",
+            "draft_id": "r1003",
+            "omitted_reason": null
+          },
+          "sms": {
+            "proposed": false,
+            "text": null,
+            "omitted_reason": "no_sms_consent"
+          }
+        },
+        "reason": null,
+        "qualification": {
+          "pest_type": "roaches",
+          "urgency": "high",
+          "property_type": "residential",
+          "service_interest": "one_time",
+          "summary": "Homeowner in a single-family house (ZIP 36606) reports roaches in the kitchen at night and wants a one-time treatment this week.",
+          "red_flags": [],
+          "confidence": 0.92
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": [
+          "fieldroutes_availability_unavailable"
+        ]
+      },
+      "calls": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 3,
+        "clickup.create_task": 2,
+        "slack.post_message": 2,
+        "gmail.create_draft": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 15394
+    },
+    {
+      "id": "clickup_timeout_after_commit",
+      "description": "The mock commits the ClickUp CSR task, then answers after the node timeout. n8n retries with the same Idempotency-Key and must not create a second task.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "auto_proposed",
+        "event_id": "evt-clickup-timeout-014",
+        "branch": "jacksonville",
+        "pest_type": "spiders",
+        "urgency": "normal",
+        "slots": [
+          {
+            "spot_id": "1-2026-10-12-3",
+            "date": "2026-10-12",
+            "start": "15:00:00",
+            "end": "17:00:00",
+            "label": "Mon, Oct 12, 3:00 PM to 5:00 PM"
+          },
+          {
+            "spot_id": "1-2026-10-13-0",
+            "date": "2026-10-13",
+            "start": "08:00:00",
+            "end": "10:00:00",
+            "label": "Tue, Oct 13, 8:00 AM to 10:00 AM"
+          },
+          {
+            "spot_id": "1-2026-10-14-1",
+            "date": "2026-10-14",
+            "start": "10:00:00",
+            "end": "12:00:00",
+            "label": "Wed, Oct 14, 10:00 AM to 12:00 PM"
+          }
+        ],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": "1001"
+        },
+        "clickup_task_id": "861003x",
+        "approval_required": false,
+        "outreach": {
+          "email": {
+            "to": "nadia.brooks@mail.example",
+            "subject": "Your Ridgeway Pest Control request",
+            "draft_id": "r1002",
+            "omitted_reason": null
+          },
+          "sms": {
+            "proposed": false,
+            "text": null,
+            "omitted_reason": "no_sms_consent"
+          }
+        },
+        "reason": null,
+        "qualification": {
+          "pest_type": "spiders",
+          "urgency": "normal",
+          "property_type": "residential",
+          "service_interest": "one_time",
+          "summary": "Homeowner (ZIP 32210) reports spiders and many webs in the garage and around porch lights and requests a one-time treatment.",
+          "red_flags": [],
+          "confidence": 0.92
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 2,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 19945
+    },
+    {
+      "id": "emergency_commercial",
+      "description": "Restaurant with rodents in the kitchen, Mobile: emergency window and commercial approval.",
+      "passed": true,
+      "notes": [],
+      "http_status": 200,
+      "response": {
+        "status": "approval_required",
+        "event_id": "evt-emergency-011",
+        "branch": "mobile",
+        "pest_type": "rodents",
+        "urgency": "emergency",
+        "slots": [
+          {
+            "spot_id": "3-2026-10-12-1",
+            "date": "2026-10-12",
+            "start": "10:00:00",
+            "end": "12:00:00",
+            "label": "Mon, Oct 12, 10:00 AM to 12:00 PM"
+          },
+          {
+            "spot_id": "3-2026-10-12-3",
+            "date": "2026-10-12",
+            "start": "15:00:00",
+            "end": "17:00:00",
+            "label": "Mon, Oct 12, 3:00 PM to 5:00 PM"
+          },
+          {
+            "spot_id": "3-2026-10-13-0",
+            "date": "2026-10-13",
+            "start": "08:00:00",
+            "end": "10:00:00",
+            "label": "Tue, Oct 13, 8:00 AM to 10:00 AM"
+          }
+        ],
+        "hubspot": {
+          "contact_id": "1000",
+          "deal_id": "1001"
+        },
+        "clickup_task_id": "861003x",
+        "approval_required": true,
+        "outreach": {
+          "email": {
+            "to": "manager@gulfcoastgrill.example",
+            "subject": "Your Ridgeway Pest Control request",
+            "draft_id": "r1002",
+            "omitted_reason": null
+          },
+          "sms": {
+            "proposed": true,
+            "text": "Hi Gulf, this is Ridgeway Pest Control about your request. We can come Mon, Oct 12, 10:00 AM to 12:00 PM or Mon, Oct 12, 3:00 PM to 5:00 PM. Reply with the time that works. Reply STOP to opt out.",
+            "omitted_reason": null
+          }
+        },
+        "reason": null,
+        "qualification": {
+          "pest_type": "rodents",
+          "urgency": "emergency",
+          "property_type": "commercial",
+          "service_interest": "one_time",
+          "summary": "Downtown restaurant (ZIP 36602) saw a rat run across the kitchen floor during lunch prep; health inspection Thursday, wants service today or tomorrow.",
+          "red_flags": [
+            "rodent_in_food_prep_area",
+            "health_inspection_deadline"
+          ],
+          "confidence": 0.95
+        },
+        "llm_model": "claude-haiku-5-5",
+        "warnings": []
+      },
+      "calls": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "hubspot.update_deal": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "elapsed_ms": 4465
+    },
+    {
+      "id": "missing_signature",
+      "description": "No signature header at all.",
+      "passed": true,
+      "notes": [],
+      "http_status": 401,
+      "response": {
+        "status": "unauthorized",
+        "error": "missing_signature"
+      },
+      "calls": {}
+    },
+    {
+      "id": "replay_two_deliveries",
+      "description": "The same signed event is delivered twice in a row.",
+      "passed": true,
+      "notes": [],
+      "first": {
+        "http_status": 200,
+        "status": "auto_proposed"
+      },
+      "second": {
+        "http_status": 200,
+        "body": {
+          "status": "duplicate",
+          "event_id": "evt-replay-check-012",
+          "reason": "already_processed"
+        }
+      },
+      "calls_after_first": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      },
+      "calls_after_second": {
+        "sheets.get_values": 3,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 1,
+        "hubspot.create_contact": 1,
+        "hubspot.create_deal": 1,
+        "hubspot.associate_deal_contact": 1,
+        "fieldroutes.search_spots": 1,
+        "gmail.create_draft": 1,
+        "clickup.create_task": 1,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      }
+    },
+    {
+      "id": "error_handler_fires",
+      "description": "HubSpot is down for good: the run fails, the error workflow alerts Slack and logs to Sheets.",
+      "passed": true,
+      "notes": [],
+      "http_status": 500,
+      "calls": {
+        "sheets.get_values": 1,
+        "fieldroutes.search_customers": 1,
+        "hubspot.search_contacts": 3,
+        "slack.post_message": 1,
+        "sheets.append": 1,
+        "anthropic.messages": 1
+      }
+    }
+  ]
+}
