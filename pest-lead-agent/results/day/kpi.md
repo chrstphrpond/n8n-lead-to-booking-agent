@@ -1,6 +1,6 @@
-# Simulated day: Tuesday, October 13, 2026
+# Replayed day: Tuesday, October 13, 2026
 
-40 deliveries (39 distinct leads and 1 redelivery) went through the real n8n 2.42.6 workflow, one at a time, with the test clock set to each arrival time in the branch's own time zone. Fictional company, mocked vendors, Claude answers replayed from recordings: nothing was sent to a real person or account, and no Claude call was made for this report.
+40 deliveries (39 distinct leads and 1 redelivery) went through the real n8n 2.42.6 workflow, one at a time, with the test clock set to each arrival time in the branch's own time zone. Self-initiated build, stand-in vendors, Claude answers replayed from recordings: nothing was sent to a real person or account, and no Claude call was made for this report.
 
 ## Leads by branch and source
 
@@ -30,12 +30,12 @@ The redelivered event is counted under its branch both times. Outside the servic
 
 | Measure | Leads | p50 | p90 |
 | --- | ---: | ---: | ---: |
-| Webhook received to CSR task created (workflow time, recorded Claude answer replayed, mocked vendors) | 38 | 0.29 s | 0.35 s |
+| Webhook received to CSR task created (workflow time, recorded Claude answer replayed, stand-in vendors) | 38 | 0.29 s | 0.35 s |
 | Webhook received to response (the whole run) | 39 | 0.34 s | 0.41 s |
 | Claude call time when it was recorded (`claude -p` through the bridge, CLI overhead included) | 39 | 3.28 s | 4.65 s |
 | Estimate: CSR task time plus the recorded Claude call time | 38 | 3.55 s | 4.99 s |
 
-The first row is what this run measured: n8n and the mocks on one laptop, with the Claude answer served instantly from a recording. It leaves out the real network, the real vendors and the real model call, so read it as the workflow's own overhead, not as a promise. Leads that get no CSR task (the out-of-area note, duplicates) are not in the first row. The last row adds the recorded model time to show the order of magnitude with a live Claude call.
+The first row is what this run measured: n8n and the stand-ins on one laptop, with the Claude answer served instantly from a recording. It leaves out the real network, the real vendors and the real model call, so read it as the workflow's own overhead, not as a promise. Leads that get no CSR task (the out-of-area note, duplicates) are not in the first row. The last row adds the recorded model time to show the order of magnitude with a live Claude call.
 
 ## Open pipeline value by stage
 
@@ -94,4 +94,4 @@ Pest type is Claude's reading of the message, as recorded; 0 lead(s) have none b
 
 ---
 
-Reproduce with `node scripts/simulate-day.mjs` (under a minute). The data is fictional: real ZIP codes with invented streets, 555-01xx phone numbers, `.example` email addresses and illustrative prices.
+Reproduce with `node scripts/simulate-day.mjs` (under a minute). The data is placeholder data: real ZIP codes with placeholder streets, 555-01xx phone numbers, `.example` email addresses and illustrative prices.

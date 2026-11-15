@@ -12,11 +12,11 @@ Walkthrough video: https://www.tella.tv/video/ai-lead-to-booking-workflow-demo-0
 
 ## What is real and what is not
 
-- **Fictional company.** "Ridgeway Pest Control" and every customer are made up. Phones are 555-0100 to 555-0199, emails are on `.example` domains (`example.com` when sent to HubSpot), and prices are illustrative.
+- **Self-initiated build.** "Ridgeway Pest Control" is not a real company; it is the setting for a build modeled on a three-branch pest control operation. Its customers are placeholder records. Phones are 555-0100 to 555-0199, emails are on `.example` domains (`example.com` when sent to HubSpot), and prices are illustrative.
 - **Real n8n.** n8n 2.42.6 runs the three workflows. The tests post HMAC-signed requests to the production webhook and check every vendor call and the resulting state.
 - **Real Claude answers.** The qualification step is Claude Haiku 5.5, with a JSON schema and guardrails on its output. The tests replay recorded answers from real calls; a local bridge can make them live.
 - **Two real vendors in the live modes.** Slack runs in a throwaway workspace (Socket Mode relay, so no public URL). HubSpot runs in a free developer test account, with the pipeline, stages and fields created by `pest-lead-agent/scripts/hubspot-setup.mjs`.
-- **The rest is mocked.** FieldRoutes, ClickUp, Gmail, Google Sheets and the event ledger are a local mock server shaped like the real APIs, with injected failures (429, 503, timeouts after a write has gone through).
+- **The rest runs on local stand-ins.** FieldRoutes, ClickUp, Gmail, Google Sheets and the event ledger are a local server that follows the real APIs' shapes, with injected failures (429, 503, timeouts after a write has gone through).
 
 Nothing here has run in production or touched a real customer.
 
@@ -33,14 +33,14 @@ Needs Node 24 and n8n 2.42.6 (`pnpm add -g n8n@2.42.6 --allow-build=sqlite3`).
 ```sh
 node --test pest-lead-agent/tests/              # unit tests, no network
 node pest-lead-agent/tests/verify.mjs           # full replay run against a real n8n server (a few minutes)
-node pest-lead-agent/scripts/simulate-day.mjs   # a simulated day of 40 leads, with a KPI report
+node pest-lead-agent/scripts/simulate-day.mjs   # a replayed day of 40 leads, with a KPI report
 ```
 
 The live Slack and HubSpot modes need your own tokens. See [`pest-lead-agent/README.md`](pest-lead-agent/README.md).
 
 ## Read more
 
-- [`pest-lead-agent/README.md`](pest-lead-agent/README.md): architecture, demo data, live modes, limits.
+- [`pest-lead-agent/README.md`](pest-lead-agent/README.md): architecture, test data, live modes, limits.
 - [`pest-lead-agent/VALIDATION.md`](pest-lead-agent/VALIDATION.md): every check and its result.
 - [`pest-lead-agent/BUILD-LOG.md`](pest-lead-agent/BUILD-LOG.md): what broke during the build and how it was fixed.
 - [`_shared/claude-bridge/`](_shared/claude-bridge/): the local bridge that answers Messages API requests with a signed-in Claude Code CLI, for testing only. A deployment points the same node at the Anthropic API with a key.

@@ -16,7 +16,7 @@ Socket Mode means Slack never calls us: the relay opens one outbound WebSocket t
 
 ## Run it
 
-The usual way is the whole live stack (n8n, the mock and this relay in one process, until Ctrl-C):
+The usual way is the whole live stack (n8n, the stand-in server and this relay in one process, until Ctrl-C):
 
 ```sh
 pest-lead-agent/scripts/live-slack.sh --check            # app token + Socket Mode: wait for hello, exit
@@ -24,7 +24,7 @@ pest-lead-agent/scripts/live-slack.sh --post <event ids> # post leads to #leads,
 pest-lead-agent/scripts/live-slack.sh                    # serve again from the saved state (results/live-slack/)
 ```
 
-To run it by itself, for example against the demo editor on port 5688 (from the repository root, so Doppler finds its config):
+To run it by itself, for example against the local editor on port 5688 (from the repository root, so Doppler finds its config):
 
 ```sh
 SLACK_TEAM_ID=T0C88V52NGN RELAY_TARGET_URL=http://127.0.0.1:5688/webhook/ridgeway/slack-action \

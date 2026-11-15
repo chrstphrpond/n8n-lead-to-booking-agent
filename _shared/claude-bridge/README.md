@@ -154,4 +154,4 @@ Errors use Anthropic's shape: `{ "type": "error", "error": { "type", "message" }
 node --test _shared/claude-bridge/tests/bridge.test.mjs
 ```
 
-The tests use `tests/fake-claude.mjs` as the CLI, so they make no real Claude calls. The bridge passes only an allowlisted environment to the child, so the fake can't be steered with environment variables. Instead it reads a `MODE:<name>` marker from the prompt, or `<configDir>/fake-mode` and `<configDir>/fake-auth.json`, and it records argv, environment, stdin and pid under `<configDir>/calls/`.
+The tests use `tests/fake-claude.mjs` as the CLI, so they make no real Claude calls. The bridge passes only an allowlisted environment to the child, so the stand-in CLI can't be steered with environment variables. Instead it reads a `MODE:<name>` marker from the prompt, or `<configDir>/fake-mode` and `<configDir>/fake-auth.json`, and it records argv, environment, stdin and pid under `<configDir>/calls/`.
