@@ -1,6 +1,6 @@
 # Replayed day: Tuesday, October 13, 2026
 
-40 deliveries (39 distinct leads and 1 redelivery) went through the real n8n 2.42.6 workflow, one at a time, with the test clock set to each arrival time in the branch's own time zone. Self-initiated build, stand-in vendors, Claude answers replayed from recordings: nothing was sent to a real person or account, and no Claude call was made for this report.
+40 deliveries (39 distinct leads and 1 redelivery) went through the real n8n 2.42.6 workflow, one at a time, with the test clock set to each arrival time in the branch's own time zone. Vendors answered by the local harness, Claude answers replayed from recordings: nothing was sent to a real person or account, and no Claude call was made for this report.
 
 ## Leads by branch and source
 

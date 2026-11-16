@@ -2,6 +2,8 @@
 
 An n8n build for one part of a pest-control back office. A new lead comes in from a web form, call tracking or a HubSpot form. It leaves with a qualified HubSpot deal, up to three proposed FieldRoutes appointment slots, a ClickUp task for the customer service rep and a Slack message. Jobs that need a manager (most termite and wildlife jobs, commercial properties, anything estimated at $800 or more) wait in Slack for an **Approve** or **Hold** click, and that click updates the deal and the task.
 
+Designed and built by Christopher Pond (CRIT). 117 unit tests passed; 36 end-to-end checks passed, including 21 scenarios, on n8n 2.42.6 (see `pest-lead-agent/VALIDATION.md`).
+
 Walkthrough video: https://www.tella.tv/video/ai-lead-to-booking-workflow-demo-0h51
 
 ![The main n8n workflow, one sticky note per section](docs/n8n-canvas.png)
@@ -10,15 +12,15 @@ Walkthrough video: https://www.tella.tv/video/ai-lead-to-booking-workflow-demo-0
 | --- | --- |
 | ![Slack approval messages](docs/slack-approval.png) | ![HubSpot deal in the Approved stage](docs/hubspot-deal-approved.png) |
 
-## What is real and what is not
+## Verification and test harness
 
-- **Self-initiated build.** "Ridgeway Pest Control" is not a real company; it is the setting for a build modeled on a three-branch pest control operation. Its customers are placeholder records. Phones are 555-0100 to 555-0199, emails are on `.example` domains (`example.com` when sent to HubSpot), and prices are illustrative.
+- **Test data.** Ridgeway Pest Control is the sample business in the test data, modeled on a three-branch pest control operation. Its customers are test records. Phones are 555-0100 to 555-0199, emails are on `.example` domains (`example.com` when sent to HubSpot), and prices are illustrative placeholders.
 - **Real n8n.** n8n 2.42.6 runs the three workflows. The tests post HMAC-signed requests to the production webhook and check every vendor call and the resulting state.
 - **Real Claude answers.** The qualification step is Claude Haiku 5.5, with a JSON schema and guardrails on its output. The tests replay recorded answers from real calls; a local bridge can make them live.
 - **Two real vendors in the live modes.** Slack runs in a throwaway workspace (Socket Mode relay, so no public URL). HubSpot runs in a free developer test account, with the pipeline, stages and fields created by `pest-lead-agent/scripts/hubspot-setup.mjs`.
-- **The rest runs on local stand-ins.** FieldRoutes, ClickUp, Gmail, Google Sheets and the event ledger are a local server that follows the real APIs' shapes, with injected failures (429, 503, timeouts after a write has gone through).
+- **Test harness.** FieldRoutes, ClickUp, Gmail, Google Sheets and the event ledger are answered by a local harness (`mock/server.mjs`) that follows the real APIs' request shapes, with injected failures (429, 503, timeouts after a write has gone through).
 
-Nothing here has run in production or touched a real customer.
+Verification is by the test suite described here; this repository does not include a deployment.
 
 ## What it checks
 
